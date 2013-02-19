@@ -21,22 +21,23 @@ def simpleCompareImages(image1, image2):
 
 def get_dictionary():
     arabicWords = [arabic_reshaper.reshape(u'وزارة'), arabic_reshaper.reshape(u'الشؤون'),
-                   arabic_reshaper.reshape(u'الخارجيّة')]
-    # , arabic_reshaper.reshape(u'الشؤون'),
-    # arabic_reshaper.reshape(u'الشؤون'), arabic_reshaper.reshape(u'الشؤون'),
-    # arabic_reshaper.reshape(u'الشؤون'), arabic_reshaper.reshape(u'الشؤون')]
+                   arabic_reshaper.reshape(u'الخارجيّة'), arabic_reshaper.reshape(u'شمس'),
+                   arabic_reshaper.reshape(u'الله'), arabic_reshaper.reshape(u'نبي'),
+                   arabic_reshaper.reshape(u'عام'), arabic_reshaper.reshape(u'مليون')]
 
     return arabicWords
 
 def get_image_dictionary():
-    arabicImagePaths = ["image_represent\word1.bmp", "image_represent\word2.bmp",
-                        "image_represent\word3.bmp"]
+    arabicImagePaths = ["image_represent/word1.bmp", "image_represent/word2.bmp",
+                        "image_represent/word3.bmp", "image_represent/word4.bmp",
+                        "image_represent/word5.bmp", "image_represent/word6.bmp",
+                        "image_represent/word7.bmp", "image_represent/word8.bmp"]
 
     return arabicImagePaths
 
 def get_split_string(path):
-    splitWords = ["image_represent\word1.bmp", "image_represent\word2.bmp",
-                        "image_represent\word3.bmp"]
+    splitWords = ["image_represent/word1.bmp", "image_represent/word2.bmp",
+                  "image_represent/word3.bmp"]
 
     return splitWords
 
@@ -58,5 +59,5 @@ sys.setdefaultencoding('utf-8')
 
 arabicWords = get_dictionary()
 arabicImagePaths = get_image_dictionary()
-words = get_split_string('')
+words = get_split_string("input_image/input.bmp")
 process(words, arabicImagePaths, arabicWords)
