@@ -1,13 +1,24 @@
 import cv
 from sets import Set
 from random import randint as rand
+from shutil import rmtree
+from os import mkdir
 
 def decompose(imagePath, outputPath):
     """decompose input image smaller parts"""
     """reading input image and extracting contours"""
+    rmtree(outputPath)
+    mkdir(outputPath)
+    mkdir(outputPath + "/dummies")
     im = cv.LoadImageM(imagePath, cv.CV_LOAD_IMAGE_GRAYSCALE)
     seq = cv.FindContours(im, cv.CreateMemStorage(), cv.CV_RETR_LIST, cv.CV_LINK_RUNS)
     ls = seq_to_list(seq)
+    print("seq num: %s" % len(ls))
+    ls = filter(lambda l : max(l)[0] - min(l)[0] < im.width / 2, ls)
+    print("filtered of big seq num: %s" % len(ls))
+    ls = filter(lambda l : max(l)[0] - min(l)[0] > 5, ls)
+    print("filtered of big and small seq num: %s" % len(ls))
+    ls.sort()
     cseqs = brute_crossing(ls)
     """writing crossed sorted sequences"""
     write_it_out(outputPath, sorted(cseqs, key = lambda cs : cs.min)) 
@@ -16,7 +27,6 @@ def decompose(imagePath, outputPath):
     dummies = sorted([CrossSeq(l) for l in ls], key = lambda cs : cs.min)
     write_it_out(outputPath + "/dummies", dummies)
     cv.SaveImage(outputPath + "/total.bmp", total.makeCvMat())
-    
     
 
 def seq_to_list(seq):
@@ -35,7 +45,7 @@ def brute_crossing(ls):
     ll.sort()
     for l in ll:
         crossed = filter(lambda cs : cs.intersects(l), cseqs)
-        print("Crossed num: %s" % len(crossed)) # debug code
+        #print("Crossed num: %s" % len(crossed)) # debug code
         if len(crossed) > 1:
             cseqs = filter(lambda cs : not cs.intersects(l), cseqs)
             ncs = CrossSeq(l)
@@ -70,7 +80,10 @@ class CrossSeq:
     def intersects(self, l):
         lmin = min(l)[0]
         lmax = max(l)[0] 
-        return (not self.max <= lmin) and (not lmax <= self.min)
+        inter = float(min(self.max, lmax) - max(lmin, self.min)) 
+        rng = float(max(self.max - self.min, lmax - lmin))
+        return inter/rng > 0.05
+        #return (not self.max <= lmin) and (not lmax <= self.min)
     def makeCvMat(self):
         m = cv.CreateMat(100,self.max-self.min + 5, cv.CV_16UC3)#self.max - self.min, 100, cv.CV_16UC3)
         cv.Set(m, (255,255,255))
@@ -80,7 +93,8 @@ class CrossSeq:
         return m
 
 
-decompose("inputText.bmp", "puppets") 
+decompose("arabic_borodion.bmp", "puppets") 
+#decompose("inputText.bmp", "puppets") 
 
 
 
