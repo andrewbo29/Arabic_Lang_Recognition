@@ -10,7 +10,7 @@ colsSum = lambda m : numpy.sum(m, 1)
 
 def binarize(path):
     bim = cv2.imread(path, cv2.CV_LOAD_IMAGE_GRAYSCALE)
-    im = abs(bim / 255 - 1);
+    im = abs(255 - bim);
     return im
  
 
@@ -62,7 +62,7 @@ def do_all_the_staff(imgfile, outpath):
 
 
 def splitlines(imgfile):
-    do_all_the_stuff(imfgile, imgfile + "_lines")
+    do_all_the_staff(imgfile, imgfile + "_lines")
 
 
 
