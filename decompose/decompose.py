@@ -71,13 +71,16 @@ class CrossSeq:
         self.cross = [l]
         self.min = min(l)[0] 
         self.max = max(l)[0]
+
     def add(self, l):
         self.cross.append(l)
         self.min = min([min(l)[0], self.min])        
         self.max = max([max(l)[0], self.max])
+
     def addAll(self, ll):
         for l in ll:
             self.add(l)
+
     def intersects(self, l):
         lmin = min(l)[0]
         lmax = max(l)[0] 
@@ -85,6 +88,7 @@ class CrossSeq:
         rng = float(max(self.max - self.min, lmax - lmin))
         return inter/rng > 0.05
         #return (not self.max <= lmin) and (not lmax <= self.min)
+
     def makeCvMat(self):
         m = cv.CreateMat(100,self.max-self.min + 5, 22)#cv.CV_16UC3)#self.max - self.min, 100, cv.CV_16UC3)
         cv.Set(m, (255,255,255))

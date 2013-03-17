@@ -41,14 +41,11 @@ def cuts(m, d):
     return ls
 
 
-
-
 def split(m, ls, d):
     if d == 0:
         return [m[ls[2*i] : ls[2*i+1], :]  for i in range(len(ls) / 2)]
     elif d == 1:
         return [m[:, ls[2*i] : ls[2*i+1]]  for i in range(len(ls) / 2)]
-
 
 
 def do_all_the_staff(imgfile, outpath):
@@ -58,7 +55,6 @@ def do_all_the_staff(imgfile, outpath):
     out = xy_cuts(mage)
     for i in range(len(out)):
         cv2.imwrite(outpath + "/%s.bmp" % i, 255 - out[i])
-
 
 
 def splitlines(imgfile):
