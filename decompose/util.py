@@ -1,15 +1,15 @@
-__author__ = 'obus'
-
 import cv2
 
 # ----------- read - write routine -------------
-def readGrayIm(ifile):
-    im = cv2.imread(ifile, cv2.CV_LOAD_IMAGE_GRAYSCALE)
+
+
+def readGrayIm(path):
+    im = cv2.imread(path, cv2.CV_LOAD_IMAGE_GRAYSCALE)
     return (255 - im).astype(float) / 255
 
 
-def writeGrayIm(ofile, m):
-    cv2.imwrite(ofile, 255 - (m * 255).astype(int))
+def writeGrayIm(path, m):
+    cv2.imwrite(path, 255 - (m * 255).astype(int))
 
 
 # -------------- drawing routine -----------------
@@ -25,10 +25,8 @@ def toPoints(centralInd, xseq):
     return pts
 
 
-
 def drawLine(m, p1, p2):
     cv2.line(m, p1, p2, 0.9)
-
 
 
 def drawSeq(m, seq):
