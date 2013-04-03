@@ -57,7 +57,7 @@ def makeOCR():
     colours = getRectangleColours()
 
     for index in range(0, len(lines)):
-        for i in range(1, len(templates)):
+        for i in range(0, len(templates)):
             resultPath = "../images/results/line_" + str(index) + ".bmp"
             templateRecognition(lines[index], templates[i], resultPath, colours[i])
 
