@@ -2,14 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="97a9bb64-80ea-4241-a57d-75e5103586bc" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\decompose\decompose.py" afterPath="" />
-      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\decompose\decompose2.py" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\0.bmp" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\arabic_borodion.bmp" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\couple.bmp" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\inputText.bmp" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\linestext.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\results\line_0.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\results\line_1.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\results\line_2.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\results\line_3.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\results\line_4.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\results\line_5.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\results\line_6.bmp" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\images\text.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\linessplit\childgarden.py" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\linessplit\xycuts_linessplit.py" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\main\test_test.bmp" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\split_to_strings\recognition.py" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\split_to_strings\split_to_strings.py" afterPath="" />
+      <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\split_to_strings\util.py" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\to-sort\arabic_reshaper.py" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\to-sort\image_represent\word1.bmp" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\to-sort\image_represent\word2.bmp" afterPath="" />
@@ -22,12 +33,11 @@
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\to-sort\input_image\input.bmp" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\to-sort\recArabicWord.py" afterPath="" />
       <change type="DELETED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\to-sort\result.doc" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/childgarden.py" afterPath="$PROJECT_DIR$/decompose/childgarden.py" />
-      <change type="MOVED" beforePath="D:\Development\Projects\Arabic Language\Arabic_Lang_Recognition\decompose\iutil.py" afterPath="$PROJECT_DIR$/decompose/util.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Arabic_Lang_Recognition.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363710074393" ignored="false" />
+    <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1365008001806" ignored="false" />
     <file path="/split_to_strings.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363768516293" ignored="false" />
     <file path="$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363706676616" ignored="false" />
     <file path="/iutil.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363712518906" ignored="false" />
@@ -51,13 +61,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="21" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0">
+            <state line="12" column="23" selection-start="516" selection-end="516" vertical-scroll-proportion="0.2939481">
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recognition.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/recognition.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="17" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -66,20 +85,7 @@
         <entry file="file://$PROJECT_DIR$/main/split_to_strings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="110" column="16" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recognition.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main/recognition.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="19" selection-start="186" selection-end="186" vertical-scroll-proportion="0.3747495">
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,7 +93,16 @@
       <file leaf-file-name="util.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="1" column="0" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="centralline.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/decompose/centralline.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="25" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,7 +168,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -182,68 +196,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="split_to_strings" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="simple_words_in_string_detection" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="linessplit" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="decompose" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -251,7 +210,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="C:/Python33/python.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -301,25 +260,6 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
-    <configuration default="false" name="recognition" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Python27/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/split_to_strings" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <module name="Arabic_Lang_Recognition" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/split_to_strings/recognition.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -332,6 +272,40 @@
       <module name="Arabic_Lang_Recognition" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/main.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="count_freqs" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:/Python27/python.exe" />
+      <option name="WORKING_DIRECTORY" value="D:/Education/NLP/Programming/1/h1-p" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <module name="Arabic_Lang_Recognition" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="D:/Education/NLP/Programming/1/h1-p/count_freqs.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <configuration default="false" name="recognition" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:/Python27/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/main" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <module name="Arabic_Lang_Recognition" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main/recognition.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
@@ -390,18 +364,20 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.split_to_strings" />
       <item index="1" class="java.lang.String" itemvalue="Python.recArabicWord" />
-      <item index="2" class="java.lang.String" itemvalue="Python.recognition" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main" />
+      <item index="2" class="java.lang.String" itemvalue="Python.main" />
+      <item index="3" class="java.lang.String" itemvalue="Python.count_freqs" />
+      <item index="4" class="java.lang.String" itemvalue="Python.recognition" />
     </list>
     <recent_temporary>
-      <list size="4">
+      <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.main" />
         <item index="1" class="java.lang.String" itemvalue="Python.recognition" />
-        <item index="2" class="java.lang.String" itemvalue="Python.split_to_strings" />
-        <item index="3" class="java.lang.String" itemvalue="Python.recArabicWord" />
+        <item index="2" class="java.lang.String" itemvalue="Python.count_freqs" />
+        <item index="3" class="java.lang.String" itemvalue="Python.recognition" />
+        <item index="4" class="java.lang.String" itemvalue="Python.split_to_strings" />
       </list>
     </recent_temporary>
   </component>
@@ -415,24 +391,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25289574" sideWeight="0.7291667" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2084942" sideWeight="0.7291667" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27083334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27083334" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="92" y="92" width="1416" height="676" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1416" height="676" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -496,101 +472,39 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm20/system/python_stubs/-762174762/cv2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1821" column="4" selection-start="51660" selection-end="51660" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
+        <state line="1821" column="4" selection-start="51660" selection-end="51660" vertical-scroll-proportion="0.33333334" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decompose/childgarden.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="240" selection-end="240" vertical-scroll-proportion="0.2939481">
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="12" column="0" selection-start="240" selection-end="240" vertical-scroll-proportion="0.2939481" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decompose/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="25" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="10" column="25" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://C:/Python27/Lib/shutil.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="4" selection-start="6305" selection-end="6305" vertical-scroll-proportion="-2.7921226">
-          <folding />
-        </state>
+        <state line="207" column="4" selection-start="6305" selection-end="6305" vertical-scroll-proportion="-2.7921226" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/recArabicWord.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#25#43#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="13" column="13" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linessplit/xycuts_linessplit.py">
+    <entry file="file://D:/Education/NLP/Programming/1/h1-p/count_freqs.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="43" selection-start="1257" selection-end="1270" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="138" column="37" selection-start="5205" selection-end="5205" vertical-scroll-proportion="-0.028818443" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linessplit/childgarden.py">
+    <entry file="file://$PROJECT_DIR$/main/recognition.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="42" selection-start="87" selection-end="112" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/decompose/centralline.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="117" selection-end="117" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/split_to_strings/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/split_to_strings/split_to_strings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="118" column="42" selection-start="2917" selection-end="2917" vertical-scroll-proportion="0.55711424">
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/split_to_strings/recognition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="204" selection-end="204" vertical-scroll-proportion="0.4769539">
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="5" column="17" selection-start="55" selection-end="55" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -598,26 +512,29 @@
     <entry file="file://$PROJECT_DIR$/main/split_to_strings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="110" column="16" selection-start="2650" selection-end="2650" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decompose/centralline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="25" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="21" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0">
+        <state line="12" column="23" selection-start="516" selection-end="516" vertical-scroll-proportion="0.2939481">
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/recognition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="19" selection-start="186" selection-end="186" vertical-scroll-proportion="0.3747495">
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
