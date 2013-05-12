@@ -15,10 +15,10 @@ def writeGrayIm(path, m):
 # -------------- drawing routine -----------------
 
 
-def toPoints(centralInd, xseq):
+def toPoints(v_from, xseq):
     """ fakin cv points has (x,y) format instead of (y,x) """
     pts = []
-    i = centralInd
+    i = v_from
     for x in xseq:
         pts.append((x, i))
         i += 1

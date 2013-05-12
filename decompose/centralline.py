@@ -236,7 +236,7 @@ def emptyBottom(m, coord):
 def findZeros(a):
     zeros = []
     x = findZero(a, 0)
-    while (x is not None):
+    while x is not None:
         zeros.append(x)
         if x[1] >= len(a):
             break
@@ -245,13 +245,13 @@ def findZeros(a):
 
 
 def findZero(a, s):
-    while (s < len(a) and a[s] != 0):
+    while s < len(a) and a[s] != 0:
         s += 1
-    if (s < len(a)):
+    if s < len(a):
         start = s
-        while (s < len(a) and a[s] == 0):
+        while s < len(a) and a[s] == 0:
             s += 1
-        return (start, s)
+        return start, s
     return None
 
 # ------------- do staff --------------------
