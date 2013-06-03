@@ -2,7 +2,6 @@ __author__ = 'obus'
 from exceptions import ValueError
 import numpy as np
 import xycuts
-from util import writeGrayIm
 
 _MAGIC_NUMBER_A = 2
 _MAGIC_NUMBER_B = 0.75
@@ -46,9 +45,9 @@ def _makeWords(line, word_spaces, symbols_spaces, wry_slices):
         left_edge = _to_slice(word_border[0])
         while True:
             symbols_min, symbols_max = symbols_ind < len(symbols_spaces) and \
-                (symbols_spaces[symbols_ind][0], symbols_spaces[symbols_ind][0]) or (-1, -1)
+                                       (symbols_spaces[symbols_ind][0], symbols_spaces[symbols_ind][0]) or (-1, -1)
             wry_min, wry_max = wry_ind < len(wry_slices) and \
-                (np.min(wry_slices[wry_ind]), np.max(wry_slices[wry_ind])) or (-1, -1)
+                               (np.min(wry_slices[wry_ind]), np.max(wry_slices[wry_ind])) or (-1, -1)
             if wry_min == -1 and symbols_min == -1:
                 right_edge = _to_slice(word_border[1])
                 symbols.append(_edge_to_symbols(line, left_edge, right_edge))
@@ -88,7 +87,7 @@ def _filter_word_spaces(zone, straight_spaces):
     for space in straight_spaces:
         if space[0] == zone.horizontal[0] or space[1] == zone.horizontal[1]:
             word_spaces.append(space)
-        elif space[1] - space[0] > border:
+        elif space[1] - space[0] >= border:
             word_spaces.append(space)
         else:
             symbols_spaces.append(space)
@@ -114,7 +113,7 @@ def _spaces_to_borders(zone, spaces):
 def _filter_wry_spaces(zone, central_ind, central_spaces):
     wry_spaces = []
     for space in central_spaces:
-        wry_space = _find_wry_space(zone, central_ind, space)
+        wry_space = find_wry_space(zone, central_ind, space)
         if wry_space is not None:
             wry_spaces.append(wry_space)
     return wry_spaces
@@ -146,7 +145,7 @@ def _insure_space(zone, zero):
 
 # ----------------- wry spaces --------------------
 
-def _find_wry_space(zone, central_ind, central_space):
+def find_wry_space(zone, central_ind, central_space):
     """find wry line which separates two symbols from in specified zone"""
     lower_slice = _find_wry_space_down(zone, central_ind, central_space)
     if lower_slice is None:
@@ -169,6 +168,8 @@ def _find_wry_space_up(zone, central_ind, central_space):
     for ind in indexes:
         prev_space = spaces[-1]
         space = _find_horizontal_line_space(zone, ind, prev_space)
+        if space is None:
+            return None
         spaces.append(space)
         if zone.im[ind, int(np.mean(space))] != 0:
             """if there is non-zero pixel in center of 'space' then there is no 'why space'"""
@@ -186,6 +187,8 @@ def _find_wry_space_down(zone, central_ind, central_space):
     for ind in range(central_ind + 1, zone.vertical[1]):
         prev_space = spaces[-1]
         space = _find_horizontal_line_space(zone, ind, prev_space)
+        if space is None:
+            return None
         spaces.append(space)
         if zone.im[ind, int(np.mean(space))] != 0:
             """if there is non-zero pixel in center of 'space' then there is no 'why space'"""
@@ -242,15 +245,28 @@ def _break_out(space, prev_space):
 
 
 def _find_horizontal_line_space(zone, v_ind, prev_space):
-    """find left and right border of horizontal space in given line (v_ind)"""
-    h_ind = int(np.mean(prev_space))
-    right = h_ind + 1
+    """find left and right border of horizontal space in given line (v_ind)
+        if there is several of them"""
+    zeros = _find_zeros(zone.im[v_ind, range(prev_space[0], prev_space[1])])
+    if len(zeros) > 1:
+        print("Expected 0 or 1 spaces at next line, but got %s" %
+              [(z[0] + prev_space[0], z[1] + prev_space[0]) for z in zeros])
+        max_length = 0
+        zero = [0, 0]
+        for z in zeros:
+            if z[1] - z[0] > max_length:
+                zero = z
+    elif len(zeros) == 1:
+        zero = zeros[0]
+    else:
+        return None
+    right = zero[1] + prev_space[0]
     while right < zone.horizontal[1] and zone.im[v_ind, right] == 0:
         right += 1
-    left = h_ind - 1
+    left = zero[0] + prev_space[0]
     while left >= zone.horizontal[0] and zone.im[v_ind, left] == 0:
         left -= 1
-    return left, right
+    return left + 1, right
 
 
 def _find_zeros(a):
@@ -274,8 +290,10 @@ def _find_zero(a, s):
         return start, s
     return None
 
+
 class Zone:
     """Zone of image"""
+
     def __init__(self, im, horizontal=None, vertical=None):
         if horizontal is None:
             horizontal = (0, im.shape[1])
@@ -291,7 +309,7 @@ class Zone:
         return self.im[self.vertical[0]:self.vertical[1], self.horizontal[0]:self.horizontal[1]]
 
     def absoluteZone(self, horizontal, vertical):
-            return Zone(self.im, horizontal, vertical)
+        return Zone(self.im, horizontal, vertical)
 
     def relativeZone(self, horizontal, vertical):
         return Zone(self.im,
@@ -301,6 +319,7 @@ class Zone:
 
 class Word(Zone):
     """Word on image"""
+
     def __init__(self, symbols, im, horizontal=None, vertical=None):
         Zone.__init__(self, im, horizontal, vertical)
         self.symbols = symbols
@@ -309,6 +328,7 @@ class Word(Zone):
 class Symbols(Zone):
     """One or few connected symbols.
     This implementation is awful. Hope, it would be rewritten"""
+
     def __init__(self, im, vertical, left_edge, right_edge):
         """horizontal_left and horizontal_right"""
         if len(left_edge) != len(right_edge) or len(left_edge) != vertical[1] - vertical[0]:

@@ -1,18 +1,19 @@
-from util import *
-import space as sp
 from shutil import rmtree
 from os import mkdir
 
+from util import *
+import space as sp
 
-im = readGrayIm("../images/inputText.bmp")
+
+im = readGrayIm("../images/line_0_sub.bmp")
+im[im < 0.5] = 0
 line = sp.Zone(im)
 words = sp.doSplit(line)
-len(words)
 output = "../output"
 rmtree(output)
 mkdir(output)
 for w_ind in range(len(words)):
-    writeGrayIm("../output/word_%s.bmp" % w_ind,  words[w_ind].extract())
+    writeGrayIm("../output/word_%s.bmp" % w_ind, words[w_ind].extract())
     w_output = output + "/word_%s" % w_ind
     mkdir(w_output)
     for s_ind in range(len(words[w_ind].symbols)):
