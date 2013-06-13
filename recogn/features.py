@@ -1,6 +1,5 @@
 import numpy as np
 import glob as gb
-
 import scipy.cluster.vq as vq
 import scipy.spatial.distance as sp_dist
 
@@ -27,6 +26,7 @@ class ImageToBlocks(object):
         for v_i in range(0, im.shape[0] - _SUB_SIZE, _SUB_SIZE):
             for h_i in range(0, im.shape[1] - _SUB_SIZE, _SUB_SIZE):
                 yield cls.sub_image(im, v_i, h_i)
+                # following if conditions are aimed to take borders into account
         if im.shape[0] % _SUB_SIZE:
             v_i = im.shape[0] - _SUB_SIZE
             for h_i in range(0, im.shape[1] - _SUB_SIZE, _SUB_SIZE):

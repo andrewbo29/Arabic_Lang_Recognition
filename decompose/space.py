@@ -21,6 +21,15 @@ def doSplit(line):
     return _makeWords(line, word_spaces, symbol_spaces, wry_slices)
 
 
+def splitToSpaces(line):
+    line = xycuts.cut_edges(line)
+    central_ind = _central_ind(line)
+    central_spaces = _find_central_spaces(line, central_ind)
+    straight_spaces, other_spaces = _filter_straight_spaces(line, central_spaces)
+    word_spaces, symbol_spaces = _filter_word_spaces(line, straight_spaces)
+    return word_spaces, symbol_spaces, other_spaces
+
+
 def _find_central_spaces(line, central_ind):
     zeros = _find_zeros(line.im[central_ind, line.horizontal[0]:line.horizontal[1]])
     return [(z[0] + line.horizontal[0], z[1] + line.horizontal[0]) for z in zeros]
@@ -359,5 +368,7 @@ class Symbols(Zone):
         raise AttributeError("Not implemented yet")
 
 
-
-
+class Line(Zone):
+    def __init__(self, im, central_ind, horizontal=None, vertical=None):
+        Zone.__init__(self, im, horizontal, vertical)
+        self.central_ind = central_ind
