@@ -1,7 +1,8 @@
 __author__ = 'obus'
 import numpy as np
-
-import space
+import space as sspace
+from util import readGrayIm
+import xycuts
 
 
 def intersects(space1, space2):
@@ -31,9 +32,15 @@ class WordSpace(object):
                                     % (central_space, straight, self.space))
         left_border = max((s[1] for s in self.straight_spaces if s[1] < central_space[0]))
         right_border = min((s[0] for s in self.straight_spaces if central_space[1] < s[0]))
-        wry_space = self.find_wry_space(central_space, (left_border, right_border))
+        wry_slice = self.find_wry_slice(central_space, (left_border, right_border))
+        if wry_slice is None:
+            return False
+        return wry_slice
 
-    def find_wry_space(self, central_space, borders):
+    def slice_symbol(self, wry_slice):
+        pass
+
+    def find_wry_slice(self, central_space, borders):
         """find wry line which separates two symbols from in specified zone"""
         lower_slice = self._find_wry_space_down(central_space, borders)
         if lower_slice is None:
@@ -41,36 +48,53 @@ class WordSpace(object):
         upper_slice = self._find_wry_space_up(central_space)
         if upper_slice is None:
             return None
-        slice = upper_slice
-        slice.append(int(np.mean(central_space)))
-        slice.extend(lower_slice)
-        return slice
+        space_slice_map = {}
+        for item in upper_slice:
+            space_slice_map[item[0]] = item[1]
+            #space_slice.append(int(np.mean(central_space)))
+        for item in lower_slice:
+            space_slice_map[item[0]] = item[1]
+        space_slice = space_slice_map.values()
+
+        return space_slice
 
     def _find_wry_space_up(self, central_space, borders):
         """find wry line from central_ind to the upper border
          which separate two symbols"""
-        spaces = [central_space]
         indexes = range(self.line.vertical[0], self.line.central_ind - 1)
         indexes.reverse()
-        for ind in indexes:
+        return self._find_wry_space_in_range(central_space, borders, indexes)
+
+    def _find_wry_space_down(self, central_space, borders):
+        """find wry line from central_ind to the lower border
+         which separate two symbols"""
+        indexes = range(self.line.central_ind + 1, self.line.vertical[1])
+        return self._find_wry_space_in_range(central_space, borders, indexes)
+
+    def _find_wry_space_in_range(self, central_space, borders, indexes_range):
+        """find wry line from central_ind to the upper border
+         which separate two symbols"""
+        spaces = [(self.line.central_ind, central_space)]
+        # indexes = range(self.line.vertical[0], self.line.central_ind - 1)
+        # indexes.reverse()
+        for ind in indexes_range:
             prev_space = spaces[-1]
-            space = self._find_horizontal_line_space(ind, prev_space, borders)
+            space = self._find_horizontal_line_space(ind, prev_space[1], borders)
             if space is None:
                 return None
-            spaces.append(space)
-            if self.line.im[ind, int(np.mean(space))] != 0:
-                """if there is non-zero pixel in center of 'space' then there is no 'why space'"""
+            spaces.append((ind, space))
+            if sum(self.line.im[ind, space[0]:space[1]]) != 0:
+                #  if there is non-zero pixel in center of 'space' then there is no 'why space'
                 return None
-            v_space = self._find_vertical_space(space, (self.line.vertical[0], ind + 1))
+            v_space = self._find_vertical_space(space[1], (indexes_range[-1], ind))
             if v_space is not None:
-                return self._slice_up(zone, ind, spaces, v_space)
+                return self._slice(spaces, v_space, ind, indexes_range[-1])
         raise Exception("There is no vertical space. Is it possible?")
 
     def _find_horizontal_line_space(self, v_ind, prev_space, borders):
         """find left and right border of horizontal space in given line (v_ind)
             if there is several of them"""
-        zeros = space._find_zeros(self.line.im[v_ind, range(prev_space[0], prev_space[1])])
-
+        zeros = sspace._find_zeros(self.line.im[v_ind, range(prev_space[0], prev_space[1])])
         if len(zeros) > 1:
             print("Expected 0 or 1 spaces at next line, but got %s" %
                   [(z[0] + prev_space[0], z[1] + prev_space[0]) for z in zeros])
@@ -93,30 +117,20 @@ class WordSpace(object):
             return None
         return left + 1, right
 
-    def _slice_up(zone, ind, spaces, v_space):
+    def _slice(self, spaces, v_space, v_from, v_to):
         """slice zone by given spaces and vertical space from central_ind to up"""
-        slice = [s[1] - 1 for s in spaces]
-        slice.pop(0)
+        space_slice = [(s[0], s[1][1] - 1) for s in spaces]
+        space_slice.pop(0)
         v_ind = v_space[1] - 1
-        for ind1 in range(zone.vertical[0], ind):
-            slice.append(v_ind)
-        slice.reverse()
-        return slice
+        for ind1 in xrange(v_from, v_to):
+            space_slice.append((ind1, v_ind))
+        space_slice.reverse()
+        return space_slice
 
-    def _slice(self, ind, spaces, v_space, v_from, v_to):
-        """slice zone by given spaces and vertical space from central_ind to up"""
-        slice = [s[1] - 1 for s in spaces]
-        slice.pop(0)
-        v_ind = v_space[1] - 1
-        for ind1 in range(v_from, v_to):
-            slice.append(v_ind)
-        slice.reverse()
-        return slice
-
-    def _find_vertical_space(zone, horizontal, vertical):
+    def _find_vertical_space(self, horizontal, vertical):
         """find vertical space borders in given zone"""
-        sub_zone = zone.absoluteZone(horizontal, vertical).extract()
-        spaces = _find_zeros(np.sum(sub_zone, 0))
+        sub_zone = self.line.absoluteZone(horizontal, vertical).extract()
+        spaces = sspace._find_zeros(np.sum(sub_zone, 0))
         if spaces is None or len(spaces) == 0:
             return None
         space = spaces[-1]
@@ -128,7 +142,7 @@ class Splitter(object):
         self.line = line
 
     def findWords(self):
-        word_spaces, symbol_spaces, other_spaces = space.splitToSpaces(self.line)
+        word_spaces, symbol_spaces, other_spaces = sspace.splitToSpaces(self.line)
         words = self.makeWords(word_spaces)
         # 1. object for each word space
         # 2. add symbols spaces to corresponding word space objects
@@ -146,6 +160,10 @@ class Splitter(object):
         return words
 
 
-
-
+im = readGrayIm("../images/line_0_sub.bmp")
+im[im < 0.3] = 0
+line = sspace.Zone(im)
+line = xycuts.cut_edges(line)
+central_ind = sspace._central_ind(line)
+words = Splitter(line).findWords()
 
