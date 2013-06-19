@@ -4,32 +4,25 @@
     <bookmark url="file://$PROJECT_DIR$/decompose/childgarden.py" description="# im = readGrayIm(&quot;../images/0.bmp&quot;)&#10;# pas = cl.sp..." line="41" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97a9bb64-80ea-4241-a57d-75e5103586bc" name="Default" comment="add gitignore&#10;create junk.py - experiments with training set formation from text document&#10;create splitter.py - friendly interface for line/word decomposition&#10;add .gitignore">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/simple_words_in_string_detection/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/recogn/junk.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/decompose/splitter.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/recogn/true_junk.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Arabic_Lang_Recognition.iml" afterPath="$PROJECT_DIR$/.idea/Arabic_Lang_Recognition.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recogn/features.py" afterPath="$PROJECT_DIR$/recogn/features.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="97a9bb64-80ea-4241-a57d-75e5103586bc" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/images/text.bmp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/space.py" afterPath="$PROJECT_DIR$/decompose/space.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/splitter.py" afterPath="$PROJECT_DIR$/decompose/splitter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Arabic_Lang_Recognition.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371108260672" ignored="false" />
+    <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371389414439" ignored="false" />
     <file path="/split_to_strings.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1370284552391" ignored="false" />
     <file path="/iutil.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363712518906" ignored="false" />
     <file path="/util.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363714910987" ignored="false" />
     <file path="/a.dummy" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363761996943" ignored="false" />
     <file path="/recognition.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363778990581" ignored="false" />
     <file path="/main.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363781271321" ignored="false" />
-    <file path="/space.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371069257661" ignored="false" />
+    <file path="/space.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371632678885" ignored="false" />
     <file path="/a.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371060188423" ignored="false" />
     <file path="/childgarden.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1369482057755" ignored="false" />
-    <file path="/fragment.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371062782521" ignored="false" />
+    <file path="/fragment.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371627228293" ignored="false" />
     <file path="/centralline.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371017755154" ignored="false" />
     <file path="/xycuts.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1368347569920" ignored="false" />
     <file path="/space_test.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1369481334910" ignored="false" />
@@ -38,7 +31,7 @@
     <file path="/junk.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371062719641" ignored="false" />
     <file path="/true_junk.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371060028534" ignored="false" />
     <file path="$PROJECT_DIR$/test/space_test.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371060921008" ignored="false" />
-    <file path="/splitter.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371107960005" ignored="false" />
+    <file path="/splitter.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371632738203" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +54,25 @@
       <file leaf-file-name="space.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decompose/space.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="255" column="0" selection-start="9482" selection-end="10384" vertical-scroll-proportion="0.0">
+            <state line="28" column="0" selection-start="980" selection-end="980" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fromnumeric.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/share/pyshared/numpy/core/fromnumeric.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="0" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="childgarden.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/decompose/childgarden.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="391" selection-end="410" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -70,10 +81,17 @@
       <file leaf-file-name="splitter.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/decompose/splitter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="38" selection-start="2651" selection-end="2651" vertical-scroll-proportion="0.33164558">
-              <folding>
-                <element signature="e#20#38#0" expanded="true" />
-              </folding>
+            <state line="238" column="36" selection-start="9879" selection-end="9879" vertical-scroll-proportion="0.39481267">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fromnumeric.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python2.7/dist-packages/numpy/core/fromnumeric.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="36" column="0" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -134,6 +152,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitLogSettings">
+    <option name="myStructureFilterPaths" />
     <option name="myDateState">
       <MyDateState />
     </option>
@@ -249,20 +268,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="output" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -288,12 +293,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../csc/stat" />
+    <property name="options.lastSelected" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="options.searchVisible" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../csc/stat" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -308,7 +313,7 @@
       <recent name="$PROJECT_DIR$/simple_words_in_string_detection" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.junk">
+  <component name="RunManager" selected="Python.splitter">
     <configuration default="false" name="childgarden" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -323,27 +328,6 @@
       <module name="Arabic_Lang_Recognition" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/decompose/childgarden.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="space_test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Python27/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Arabic_Lang_Recognition" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/space_test.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -412,6 +396,27 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="splitter" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:/Python27/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/decompose" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Arabic_Lang_Recognition" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/decompose/splitter.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -473,18 +478,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.childgarden" />
-      <item index="1" class="java.lang.String" itemvalue="Python.space_test" />
-      <item index="2" class="java.lang.String" itemvalue="Python.split_to_strings" />
-      <item index="3" class="java.lang.String" itemvalue="Python.features" />
-      <item index="4" class="java.lang.String" itemvalue="Python.junk" />
+      <item index="1" class="java.lang.String" itemvalue="Python.split_to_strings" />
+      <item index="2" class="java.lang.String" itemvalue="Python.features" />
+      <item index="3" class="java.lang.String" itemvalue="Python.junk" />
+      <item index="4" class="java.lang.String" itemvalue="Python.splitter" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.junk" />
-        <item index="1" class="java.lang.String" itemvalue="Python.features" />
-        <item index="2" class="java.lang.String" itemvalue="Python.split_to_strings" />
-        <item index="3" class="java.lang.String" itemvalue="Python.childgarden" />
-        <item index="4" class="java.lang.String" itemvalue="Python.space_test" />
+        <item index="0" class="java.lang.String" itemvalue="Python.splitter" />
+        <item index="1" class="java.lang.String" itemvalue="Python.junk" />
+        <item index="2" class="java.lang.String" itemvalue="Python.features" />
+        <item index="3" class="java.lang.String" itemvalue="Python.split_to_strings" />
+        <item index="4" class="java.lang.String" itemvalue="Python.childgarden" />
       </list>
     </recent_temporary>
   </component>
@@ -516,29 +521,33 @@
       <created>1370288158201</created>
       <updated>1370288158201</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add gitignore&#10;create junk.py - experiments with training set formation from text document&#10;create splitter.py - friendly interface for line/word decomposition&#10;add .gitignore">
+      <created>1371108294307</created>
+      <updated>1371108294307</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15530303" sideWeight="0.67145133" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3939394" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.6283892" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15757576" sideWeight="0.5614035" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4385965" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37161085" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37161085" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1416" height="676" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32376397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32376397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -607,11 +616,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/decompose/space.py</url>
-          <line>311</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/decompose/childgarden.py</url>
           <line>29</line>
           <option name="timeStamp" value="35" />
@@ -633,44 +637,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/decompose/space.py</url>
-          <line>158</line>
+          <line>160</line>
           <option name="timeStamp" value="185" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/decompose/space.py</url>
-          <line>167</line>
+          <line>169</line>
           <option name="timeStamp" value="186" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/decompose/splitter.py</url>
-          <line>75</line>
-          <option name="timeStamp" value="188" />
+          <line>94</line>
+          <option name="timeStamp" value="218" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="189" />
+      <option name="time" value="231" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/split_to_strings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="32" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="19" selection-start="781" selection-end="781" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/recArabicWord.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="34" selection-start="1392" selection-end="1392" vertical-scroll-proportion="-8.04" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main/recognition.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="19" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0" />
@@ -678,16 +662,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/recogn/features.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="28" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
+        <state line="34" column="28" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decompose/util.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0" />
+        <state line="11" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decompose/centralline.py">
@@ -704,23 +686,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/true_junk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="135" selection-end="239" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="0" selection-start="20" selection-end="20" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="20" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -739,19 +707,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1123" column="0" selection-start="46950" selection-end="46950" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recogn/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="20" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recogn/true_junk.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="135" selection-end="239" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decompose/childgarden.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="391" selection-end="410" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/share/pyshared/numpy/core/fromnumeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="1113" selection-end="1113" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/decompose/space.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="255" column="0" selection-start="9482" selection-end="10384" vertical-scroll-proportion="0.0">
+        <state line="28" column="0" selection-start="980" selection-end="980" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decompose/splitter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="38" selection-start="2651" selection-end="2651" vertical-scroll-proportion="0.33164558">
-          <folding>
-            <element signature="e#20#38#0" expanded="true" />
-          </folding>
+        <state line="238" column="36" selection-start="9879" selection-end="9879" vertical-scroll-proportion="0.39481267">
+          <folding />
         </state>
       </provider>
     </entry>

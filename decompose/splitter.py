@@ -1,11 +1,18 @@
 __author__ = 'obus'
 import numpy as np
+from shutil import rmtree
+from os import mkdir
+
 import space as sspace
-from util import readGrayIm
+from util import readGrayIm, writeGrayIm
 import xycuts
 
 
 def intersects(space1, space2):
+    """
+    check, whether two spaces intersects or not
+    example: [0,5] and [4, 10] intersects, but [0,5] and [6,10] not.
+    """
     return \
         (space1[0] < space2[0] < space1[1]) or \
         (space1[0] < space2[0] and space2[1] < space1[1]) or \
@@ -14,12 +21,22 @@ def intersects(space1, space2):
 
 
 class WordSpace(object):
+    """
+    object incapsulate part of image contain word
+    consist of methods and objects involved in finding and extracting symbols (letters and letters sequences)
+    for the part of image
+    """
+
     def __init__(self, line, word_space):
         self.line = line
         self.space = word_space
         self.straight_spaces = []
+        self.wry_slices = []
 
     def __contains__(self, item):
+        """
+        does this word contains such space or not
+        """
         return self.space[0] <= item[0] and item[1] <= self.space[1]
 
     def add_straight_space(self, straight_space):
@@ -30,22 +47,65 @@ class WordSpace(object):
             if intersects(straight, central_space):
                 raise BaseException("Illegal wry %s and straight %s spaces in word %s"
                                     % (central_space, straight, self.space))
-        left_border = max((s[1] for s in self.straight_spaces if s[1] < central_space[0]))
-        right_border = min((s[0] for s in self.straight_spaces if central_space[1] < s[0]))
+        left_border = self.left_border_for_wry_space(central_space)
+        right_border = self.right_border_for_wry_space(central_space)
+        if left_border > central_space[0] or right_border < central_space[1]:
+            print "Central space: ", central_space, \
+                ", left border: ", left_border, \
+                ", right border: ", right_border
+            return
         wry_slice = self.find_wry_slice(central_space, (left_border, right_border))
         if wry_slice is None:
             return False
-        return wry_slice
+        self.wry_slices.append(wry_slice)
+        return True
 
-    def slice_symbol(self, wry_slice):
-        pass
+    def left_border_for_wry_space(self, central_space):
+        seq = [s[1] for s in self.straight_spaces if s[1] < central_space[0]]
+        return seq and max(seq) or self.space[0]
+
+    def right_border_for_wry_space(self, central_space):
+        seq = [s[0] for s in self.straight_spaces if central_space[1] < s[0]]
+        return seq and min(seq) or self.space[1]
+
+    def toWord(self):
+        """
+        transform self to sspace.Word object (finally extract symbols images)
+        """
+        start_space_list = []
+        for straight in self.straight_spaces:
+            start_space_list.append((min(straight), straight))
+        for wry in self.wry_slices:
+            start_space_list.append((min(wry), wry))
+        start_space_list.sort()
+        _to_slice = lambda x: [x] * (self.line.vertical[1] - self.line.vertical[0])
+        symbols = []
+        left_edge = _to_slice(self.space[0])
+        for start_space in start_space_list:
+            print start_space[0]
+            space = start_space[1]
+            if len(space) == 2:
+                # means space is straight
+                right_edge = _to_slice(space[0])
+                symbols.append(self._edge_to_symbols(left_edge, right_edge))
+                left_edge = _to_slice(space[1])
+            else:
+                # otherwise space is wry
+                right_edge = space
+                symbols.append(self._edge_to_symbols(left_edge, right_edge))
+                left_edge = space
+        symbols.append(self._edge_to_symbols(left_edge, _to_slice(self.space[1])))
+        return sspace.Word(symbols, self.line.im, horizontal=self.space, vertical=self.line.vertical)
+
+    def _edge_to_symbols(self, left_edge, right_edge):
+        return sspace.Symbols(self.line.im, self.line.vertical, left_edge, right_edge)
 
     def find_wry_slice(self, central_space, borders):
         """find wry line which separates two symbols from in specified zone"""
         lower_slice = self._find_wry_space_down(central_space, borders)
         if lower_slice is None:
             return None
-        upper_slice = self._find_wry_space_up(central_space)
+        upper_slice = self._find_wry_space_up(central_space, borders)
         if upper_slice is None:
             return None
         space_slice_map = {}
@@ -55,13 +115,12 @@ class WordSpace(object):
         for item in lower_slice:
             space_slice_map[item[0]] = item[1]
         space_slice = space_slice_map.values()
-
         return space_slice
 
     def _find_wry_space_up(self, central_space, borders):
         """find wry line from central_ind to the upper border
          which separate two symbols"""
-        indexes = range(self.line.vertical[0], self.line.central_ind - 1)
+        indexes = range(self.line.vertical[0], self.line.central_ind)
         indexes.reverse()
         return self._find_wry_space_in_range(central_space, borders, indexes)
 
@@ -86,9 +145,10 @@ class WordSpace(object):
             if sum(self.line.im[ind, space[0]:space[1]]) != 0:
                 #  if there is non-zero pixel in center of 'space' then there is no 'why space'
                 return None
-            v_space = self._find_vertical_space(space[1], (indexes_range[-1], ind))
+            v_from, v_to = min(ind, indexes_range[-1]), max(ind, indexes_range[-1])
+            v_space = self._find_vertical_space(space, (v_from, v_to))
             if v_space is not None:
-                return self._slice(spaces, v_space, ind, indexes_range[-1])
+                return self._slice(spaces, v_space, v_from, v_to)
         raise Exception("There is no vertical space. Is it possible?")
 
     def _find_horizontal_line_space(self, v_ind, prev_space, borders):
@@ -120,11 +180,11 @@ class WordSpace(object):
     def _slice(self, spaces, v_space, v_from, v_to):
         """slice zone by given spaces and vertical space from central_ind to up"""
         space_slice = [(s[0], s[1][1] - 1) for s in spaces]
-        space_slice.pop(0)
+        # space_slice.pop(0)
         v_ind = v_space[1] - 1
-        for ind1 in xrange(v_from, v_to):
+        for ind1 in xrange(v_from, v_to + 1):
             space_slice.append((ind1, v_ind))
-        space_slice.reverse()
+            # space_slice.reverse()
         return space_slice
 
     def _find_vertical_space(self, horizontal, vertical):
@@ -141,12 +201,30 @@ class Splitter(object):
     def __init__(self, line):
         self.line = line
 
-    def findWords(self):
+    def find_word_spaces(self):
         word_spaces, symbol_spaces, other_spaces = sspace.splitToSpaces(self.line)
         words = self.makeWords(word_spaces)
+        self.add_straight_spaces(words, symbol_spaces)
+        self.add_wry_spaces(words, other_spaces)
+        return words
         # 1. object for each word space
         # 2. add symbols spaces to corresponding word space objects
         # 3. for all other spaces and corresponding word space object figure out, whether it is real space or not
+
+    def add_straight_spaces(self, words, symbol_spaces):
+        for symbol_space in symbol_spaces:
+            for word in words:
+                if symbol_space in word:
+                    word.add_straight_space(symbol_space)
+                    break
+
+    def add_wry_spaces(self, words, other_spaces):
+        for wry_space_candidate in other_spaces:
+            accepted_count = 0
+            for word in words:
+                if word.check_wry_space(wry_space_candidate):
+                    accepted_count += 1
+            print "Wry space accepted %s times" % accepted_count
 
     def makeWords(self, word_spaces):
         start = self.line.vertical[0]
@@ -155,15 +233,28 @@ class Splitter(object):
             end = space[0]
             words.append(WordSpace(self.line, (start, end)))
             start = space[1]
-        end = self.line.vertical[1]
+        end = self.line.horizontal[1]
         words.append(WordSpace(self.line, (start, end)))
         return words
 
 
-im = readGrayIm("../images/line_0_sub.bmp")
-im[im < 0.3] = 0
-line = sspace.Zone(im)
-line = xycuts.cut_edges(line)
-central_ind = sspace._central_ind(line)
-words = Splitter(line).findWords()
-
+im = readGrayIm("../images/inputText.bmp")
+#im[im < 0.3] = 0
+zone = sspace.Zone(im)
+zone = xycuts.cut_edges(zone)
+central_ind = sspace._central_ind(zone)
+line = sspace.Line(zone.im, central_ind, horizontal=zone.horizontal, vertical=zone.vertical)
+word_spaces = Splitter(line).find_word_spaces()
+word_id = 0
+output = "/home/obus/study/candidate/arabic/code/output/"
+rmtree(output)
+mkdir(output)
+for word_space in word_spaces:
+    word = word_space.toWord()
+    writeGrayIm(output + "word_%s.bmp" % word_id, word.extract())
+    symbol_id = 0
+    mkdir(output + "word_%s" % word_id)
+    for symbol in word.symbols:
+        writeGrayIm(output + "word_%s/symbol_%s.bmp" % (word_id, symbol_id), symbol.extract())
+        symbol_id += 1
+    word_id += 1

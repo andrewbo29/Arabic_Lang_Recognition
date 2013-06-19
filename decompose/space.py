@@ -87,6 +87,8 @@ def _edge_to_symbols(zone, left_edge, right_edge):
 
 def _filter_word_spaces(zone, straight_spaces):
     """find, which spaces separate words (rather than symbols) and return them"""
+    if not straight_spaces:
+        return [], []
     lens = [s[1] - s[0] for s in straight_spaces]
     min_len = np.min(lens)
     max_len = np.max(lens)
