@@ -227,7 +227,7 @@ class Splitter(object):
             print "Wry space accepted %s times" % accepted_count
 
     def makeWords(self, word_spaces):
-        start = self.line.vertical[0]
+        start = self.line.horizontal[0]
         words = []
         for space in word_spaces:
             end = space[0]
@@ -238,15 +238,15 @@ class Splitter(object):
         return words
 
 
-im = readGrayIm("../images/inputText.bmp")
-#im[im < 0.3] = 0
+im = readGrayIm("../images/line_0.bmp")
+im[im < 0.3] = 0
 zone = sspace.Zone(im)
 zone = xycuts.cut_edges(zone)
 central_ind = sspace._central_ind(zone)
 line = sspace.Line(zone.im, central_ind, horizontal=zone.horizontal, vertical=zone.vertical)
 word_spaces = Splitter(line).find_word_spaces()
 word_id = 0
-output = "/home/obus/study/candidate/arabic/code/output/"
+output = "../output/"
 rmtree(output)
 mkdir(output)
 for word_space in word_spaces:
