@@ -1,5 +1,4 @@
 import cv2
-import util
 import numpy
 
 
@@ -29,37 +28,8 @@ def templateRecognition(line, templ, resultPath, colour):
     cv2.imwrite(resultPath, newImage)
 
 
-def getRectangleColours():
-    colours = [(255, 255, 0, 0), (48, 213, 200, 0), (48, 213, 200, 0), (123, 63, 0, 0),
-               (0, 0, 255, 0), (255, 0, 0, 0), (0, 255, 0, 0), (58, 117, 196, 0),
-               (215, 125, 49, 0), (255, 71, 202, 0), (139, 0, 255, 0), (139, 0, 255, 0)]
-    return colours
-
-
-def getTemplates():
-    templates = []
-    for i in range(1, 13):
-        path = "../images/train_data/" + str(i) + ".bmp"
-        templates.append(util.readGrayIm(path))
-    return templates
-
-
-def getLines():
-    lines = []
-    for i in range(0, 7):
-        lines.append(util.readGrayIm("../images/lines/line_" + str(i) + ".bmp"))
-    return lines
-
-
-def makeOCR():
-    lines = getLines()
-    templates = getTemplates()
-    colours = getRectangleColours()
-
+def makeOCR(lines, templates, colours):
     for index in range(0, len(lines)):
         for i in range(0, len(templates)):
             resultPath = "../images/results/line_" + str(index) + ".bmp"
             templateRecognition(lines[index], templates[i], resultPath, colours[i])
-
-
-# makeOCR()

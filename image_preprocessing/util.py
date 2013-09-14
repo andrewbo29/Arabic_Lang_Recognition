@@ -1,3 +1,4 @@
+
 import cv2
 
 # ----------- read - write routine -------------
@@ -16,7 +17,7 @@ def writeGrayIm(path, im):
 
 
 def toPoints(centralInd, xseq):
-    """ fakin cv points has (x,y) format instead of (y,x) """
+    """ invert cv points format from (x,y) to (y,x) """
     pts = []
     i = centralInd
     for x in xseq:
@@ -35,5 +36,3 @@ def drawSeq(m, seq):
         p2 = seq[i2]
         drawLine(m, p1, p2)
         p1 = p2
-
-

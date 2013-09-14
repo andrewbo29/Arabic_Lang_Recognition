@@ -2,9 +2,6 @@ import cv2
 import util
 import numpy
 
-PATH = "../images/text_input.bmp"
-PATH_NORM = "../images/text_norm.bmp"
-PATH_CENTRAL_LINE = "../images/text_central_line.bmp"
 
 ANGLE_STEP = 5
 ROW_BIAS = 10
@@ -117,10 +114,3 @@ def splitDocumentLines(image):
     for i in range(len(out)):
         fileLine = "../images/lines/line_" + str(i) + ".bmp"
         util.writeGrayIm(fileLine, out[i])
-
-
-# image = util.readGrayIm(PATH)
-# norm_image = normalizeImage(image)
-# util.writeGrayIm(PATH_NORM, norm_image)
-# util.writeGrayIm(PATH_CENTRAL_LINE, erodeImage(norm_image, STRUCT_SHAPE_CENTRAL_LNE))
-# splitDocumentLines(norm_image)

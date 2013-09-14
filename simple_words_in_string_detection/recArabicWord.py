@@ -8,16 +8,19 @@ import sys
 THRESHOLD = 5
 RESULT_PATH = 'result.doc'
 
+
 def readImage(path):
     bim = cv2.imread(path, cv2.CV_LOAD_IMAGE_GRAYSCALE)
     im = abs(bim / 255 - 1)
     return im
+
 
 def simpleCompareImages(image1, image2):
     val = np.mean(abs(image1 - image2))
     if val <= THRESHOLD:
         return True
     return False
+
 
 def get_dictionary():
     arabicWords = [arabic_reshaper.reshape(u'وزارة'), arabic_reshaper.reshape(u'الشؤون'),
@@ -27,6 +30,7 @@ def get_dictionary():
 
     return arabicWords
 
+
 def get_image_dictionary():
     arabicImagePaths = ["image_represent/word1.bmp", "image_represent/word2.bmp",
                         "image_represent/word3.bmp", "image_represent/word4.bmp",
@@ -35,11 +39,13 @@ def get_image_dictionary():
 
     return arabicImagePaths
 
+
 def get_split_string(path):
     splitWords = ["image_represent/word1.bmp", "image_represent/word2.bmp",
                   "image_represent/word3.bmp"]
 
     return splitWords
+
 
 def process(words, dictImages, dict):
     f = open(RESULT_PATH, 'w')
