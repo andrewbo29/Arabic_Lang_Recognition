@@ -44,10 +44,10 @@ def fix_arabic_text(line):
     return get_display(arabic_reshaper.reshape(unicode(line[:-2], "utf-8")))
 
 
-def _cut_edges(temp_parh, path):
+def _cut_edges(temp_path, path):
     im = decompose.xycuts.cut_edges(
         decompose.space.Zone(
-            decompose.util.readGrayIm(temp_parh)
+            decompose.util.readGrayIm(temp_path)
         )
     ).extract()
     decompose.util.writeGrayIm(path, im)
@@ -72,7 +72,7 @@ def split_to_symbols(word):
             decompose.util.readGrayIm(temp_output)
         )
     )
-    decompose.space.doSplit(zone)
+    return decompose.space.doSplit(zone)
 
 
 if __name__ == '__main__':
@@ -94,15 +94,20 @@ if __name__ == '__main__':
     #     decompose.util.writeGrayIm(output + "/%s_%s.bmp" % (id, freq), im)
     #     id += 1
     id = 0
+    s_id = 0
     for line in open(words_file, 'rb'):
         id += 1
         if id % 10 != 9:
             continue
         word = fix_arabic_text(line)
+        print word
         print len(word)
         write_arabic_text(word, words_output + "/%s.bmp" % id)
         if len(word) > 1:
-            print split_to_symbols(word)
+            w = split_to_symbols(word)[0]
+            for s in w.symbols:
+                decompose.util.writeGrayIm(output + "/%s.bmp" % s_id, s.extract())
+                s_id += 1
 
 
 

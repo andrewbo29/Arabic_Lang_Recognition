@@ -6,7 +6,7 @@ import scipy.spatial.distance as sp_dist
 import decompose.util as util
 
 
-_SUB_SIZE = 8
+_SUB_SIZE = 16
 
 
 class ImageToBlocks(object):
@@ -96,7 +96,7 @@ class FeatureLearner(object):
         print len(data)
         nd_data = np.zeros((len(data), _SUB_SIZE * _SUB_SIZE), dtype=float)
         for i in range(len(data)):
-            nd_data[i, :] = data[i]
+            nd_data[i, :] = data[i].flatten()
         return nd_data
 
     def clusterize(self, K):
@@ -125,4 +125,6 @@ def learn_features(images_dir, features_dir, K):
 
 
 if __name__ == "__main__":
-    learn_features("../images/lines", "some empty folder", 100500)
+    # learn_features("../images/lines", "some empty folder", 100500)
+    learn_features("/home/obus/study/candidate/arabic/code/output/symbols",
+                   "/home/obus/study/candidate/arabic/code/output/clusters", 42)

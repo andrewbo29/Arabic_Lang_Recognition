@@ -16,8 +16,8 @@ def cut_leftright(zone):
     while hsum[right_offset - 1] == 0:
         right_offset -= 1
     return sp.Zone(zone.im,
-                horizontal=(zone.horizontal[0] + left_offset, zone.horizontal[0] + right_offset),
-                vertical=zone.vertical)
+                   horizontal=(zone.horizontal[0] + left_offset, zone.horizontal[0] + right_offset),
+                   vertical=zone.vertical)
 
 
 def cut_topdown(zone):
@@ -30,9 +30,11 @@ def cut_topdown(zone):
     while vsum[down_offset - 1] == 0:
         down_offset -= 1
     return sp.Zone(zone.im,
-                horizontal=zone.horizontal,
-                vertical=(zone.vertical[0] + top_offset, zone.vertical[0] + down_offset))
+                   horizontal=zone.horizontal,
+                   vertical=(zone.vertical[0] + top_offset, zone.vertical[0] + down_offset))
 
 
 def cut_edges(zone):
+    if sum(sum(zone.extract())) == 0:
+        return zone
     return cut_topdown(cut_leftright(zone))

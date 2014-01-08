@@ -16,9 +16,40 @@ def doSplit(line):
     central_ind = _central_ind(line)
     central_spaces = _find_central_spaces(line, central_ind)
     straight_spaces, other_spaces = _filter_straight_spaces(line, central_spaces)
-    word_spaces, symbol_spaces = _filter_word_spaces(line, straight_spaces)
+    # word_spaces, symbol_spaces = _filter_word_spaces(line, straight_spaces)
+    word_spaces = [] # [line.horizontal]
+    symbol_spaces = straight_spaces
     wry_slices = _filter_wry_spaces(line, central_ind, other_spaces)
+    wry_slices = filter(lambda ws: brute_wry_filter(line, central_ind, ws, straight_spaces), wry_slices)
+    #    if len(wry_slices) + len(straight_spaces) == 0:
+    #        return line
     return _makeWords(line, word_spaces, symbol_spaces, wry_slices)
+
+
+def brute_wry_filter(line, central_ind, wry_slice, straight_spaces):
+    if len(straight_spaces) == 0:
+        return True
+    border = [line.horizontal[0], line.horizontal[1]]
+    i = 0
+    while i < len(straight_spaces):
+        if straight_spaces[i][0] >= wry_slice[central_ind]:
+            break
+        i += 1
+    if i - 1 >= 0:
+        border[0] = straight_spaces[i - 1][1]
+    if i < len(straight_spaces):
+        border[1] = straight_spaces[i][0]
+    for i in range(len(wry_slice)):
+        v_ind = i + line.vertical[0]
+        if wry_slice[i] < border[0]:
+            if line.im[v_ind, border[0]] > 0:
+                return False
+            wry_slice[i] = border[0]
+        if border[1] - 1 < wry_slice[1]:
+            if line.im[v_ind, border[1] - 1] > 0:
+                return False
+            wry_slice[i] = border[1] - 1
+    return True
 
 
 def splitToSpaces(line):
@@ -26,6 +57,7 @@ def splitToSpaces(line):
     central_ind = _central_ind(line)
     central_spaces = _find_central_spaces(line, central_ind)
     straight_spaces, other_spaces = _filter_straight_spaces(line, central_spaces)
+    straight_spaces.sort()
     word_spaces, symbol_spaces = _filter_word_spaces(line, straight_spaces)
     return word_spaces, symbol_spaces, other_spaces
 
@@ -41,7 +73,7 @@ def _central_ind(zone):
     return maxInd + zone.vertical[0]
 
 
-def _makeWords(line, word_spaces, symbols_spaces, wry_slices):
+def makeWords(line, word_spaces, symbols_spaces, wry_slices):
     """slow stupid and unreadable realization
     assume that symbol space could not start from left border or/and ends at right border"""
     _to_slice = lambda x: [x] * (line.vertical[1] - line.vertical[0])
@@ -107,6 +139,8 @@ def _filter_word_spaces(zone, straight_spaces):
 
 def _spaces_to_borders(zone, spaces):
     borders = []
+    if len(spaces) == 0:
+        return [zone.horizontal]
     if spaces[0][0] == zone.horizontal[0]:
         from_ind = 1
         prev_border = spaces[0][1]
@@ -175,20 +209,26 @@ def _find_wry_space_up(zone, central_ind, central_space):
      which separate two symbols"""
     spaces = [central_space]
     indexes = range(zone.vertical[0], central_ind - 1)
-    indexes.reverse()
-    for ind in indexes:
-        prev_space = spaces[-1]
-        space = _find_horizontal_line_space(zone, ind, prev_space)
-        if space is None:
-            return None
-        spaces.append(space)
-        if zone.im[ind, int(np.mean(space))] != 0:
-            """if there is non-zero pixel in center of 'space' then there is no 'why space'"""
-            return None
-        v_space = _find_vertical_space(zone, (space[0] + 1, space[1]), (zone.vertical[0], ind + 1))
-        if v_space is not None:
-            return _slice_up(zone, ind, spaces, v_space)
-    raise Exception("There is no vertical space. Is it possible?")
+    sums = xycuts._sum_horizontal(zone.im[indexes, central_space[0]:central_space[1]])
+    zeros = _find_zeros(sums)
+    if zeros is None or len(zeros) == 0:
+        return None
+    z = zeros[len(zeros) / 2]
+    return [(z[1] + z[0]) / 2 for n in indexes]
+    # indexes.reverse()
+    # for ind in indexes:
+    #     prev_space = spaces[-1]
+    #     space = _find_horizontal_line_space(zone, ind, prev_space)
+    #     if space is None:
+    #         return None
+    #     spaces.append(space)
+    #     if zone.im[ind, int(np.mean(space))] != 0:
+    #         """if there is non-zero pixel in center of 'space' then there is no 'why space'"""
+    #         return None
+    #     v_space = _find_vertical_space(zone, (space[0] + 1, space[1]), (zone.vertical[0], ind + 1))
+    #     if v_space is not None:
+    #         return _slice_up(zone, ind, spaces, v_space)
+    # raise Exception("There is no vertical space. Is it possible?")
 
 
 def _find_wry_space_down(zone, central_ind, central_space):
@@ -311,7 +351,7 @@ class Zone:
         if vertical is None:
             vertical = (0, im.shape[0])
         if horizontal[0] < 0 or vertical[0] < 0 or horizontal[1] > im.shape[1] or vertical[1] > im.shape[0]:
-            raise ValueError("Horizontal %s, vertical %s." % (horizontal, vertical))
+            raise ValueError("Horizontal: %s, vertical: %s, shape: %s" % (horizontal, vertical, im.shape))
         self.im = im
         self.horizontal = horizontal
         self.vertical = vertical
@@ -324,8 +364,8 @@ class Zone:
 
     def relativeZone(self, horizontal, vertical):
         return Zone(self.im,
-                    (self.horizontal[0] + horizontal[0], self.horizontal[1] + horizontal[1]),
-                    (self.vertical[0] + vertical[0], self.vertical[1] + vertical[1]))
+                    (self.horizontal[0] + horizontal[0], self.horizontal[0] + horizontal[1]),
+                    (self.vertical[0] + vertical[0], self.vertical[0] + vertical[1]))
 
 
 class Word(Zone):

@@ -1,5 +1,7 @@
 __author__ = 'obus'
-from decompose.space import *
+import numpy as np;
+
+import space as sp
 
 
 def test_find_wry_space1():
@@ -25,7 +27,7 @@ def test_find_wry_space1():
     expected_slice = [15, 15, 15, 15, 15, 14, 13, 13, 11, 11, 10, 7, 6, 5, 5, 5, 5]
     central_ind = 9
     central_space = (9, 14)
-    slice = find_wry_space(Zone(im), central_ind, central_space)
+    slice = sp.find_wry_space(sp.Zone(im), central_ind, central_space)
     assert slice is not None, "Slice has been found"
     assert len(slice) == im.shape[0], "Expected slice size %s, but got %s" % (len(slice), im.shape[0])
     assert slice == expected_slice, "Expected slice %s, \n but got %s" % (expected_slice, slice)
@@ -55,40 +57,12 @@ def test_find_wry_space2():
     expected_slice = [12, 12, 12, 12, 12, 12, 12, 12, 12, 10, 12, 12, 11, 6, 6, 6, 6, 6]
     central_ind = 10
     central_space = (7, 13)
-    slice = find_wry_space(Zone(im), central_ind, central_space)
+    slice = sp.find_wry_space(sp.Zone(im), central_ind, central_space)
     assert slice is not None, "Slice has been found"
     assert len(slice) == im.shape[0], "Expected slice size %s, but got %s" % (len(slice), im.shape[0])
     assert slice == expected_slice, "Expected slice %s, \n but got %s" % (expected_slice, slice)
 
 
-def test_doSplit():
-    im = np.array([
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ])
-    words = doSplit(Zone(im))
-    print(len(words))
-    for w in words:
-        print(w)
-
-
 # ho to work with two symbols?
-# test_doSplit()
 test_find_wry_space1()
 test_find_wry_space2()
