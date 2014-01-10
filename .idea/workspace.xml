@@ -4,30 +4,24 @@
     <bookmark url="file://$PROJECT_DIR$/decompose/childgarden.py" description="# im = readGrayIm(&quot;../images/0.bmp&quot;)&#10;# pas = cl.sp..." line="41" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="97a9bb64-80ea-4241-a57d-75e5103586bc" name="Default" comment="add gitignore&#10;create junk.py - experiments with training set formation from text document&#10;create splitter.py - friendly interface for line/word decomposition&#10;add .gitignore">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/recogn/arab_words_writer.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/recogn/rec.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/space.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recogn/features.py" afterPath="$PROJECT_DIR$/recogn/features.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recogn/junk.py" afterPath="$PROJECT_DIR$/recogn/junk.py" />
+    <list default="true" id="97a9bb64-80ea-4241-a57d-75e5103586bc" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recogn/rec.py" afterPath="$PROJECT_DIR$/recogn/rec.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/space.py" afterPath="$PROJECT_DIR$/decompose/space.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/space_test.py" afterPath="$PROJECT_DIR$/test/space_test.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/xycuts.py" afterPath="$PROJECT_DIR$/decompose/xycuts.py" />
     </list>
     <ignored path="Arabic_Lang_Recognition.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389193051313" ignored="false" />
+    <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389373242127" ignored="false" />
     <file path="/split_to_strings.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1370284552391" ignored="false" />
     <file path="/iutil.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363712518906" ignored="false" />
     <file path="/util.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363714910987" ignored="false" />
     <file path="/a.dummy" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1386194572394" ignored="false" />
     <file path="/recognition.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363778990581" ignored="false" />
     <file path="/main.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363781271321" ignored="false" />
-    <file path="/space.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389188418884" ignored="false" />
+    <file path="/space.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389380476895" ignored="false" />
     <file path="/a.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371060188423" ignored="false" />
     <file path="/childgarden.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1369482057755" ignored="false" />
-    <file path="/fragment.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389191874399" ignored="false" />
+    <file path="/fragment.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389379267398" ignored="false" />
     <file path="/centralline.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371017755154" ignored="false" />
     <file path="/xycuts.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389191985366" ignored="false" />
     <file path="/space_test.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1379578630732" ignored="false" />
@@ -38,6 +32,7 @@
     <file path="/splitter.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371632738203" ignored="false" />
     <file path="/arab_words_writer.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389108685722" ignored="false" />
     <file path="/fontshit.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389193007413" ignored="false" />
+    <file path="/rec.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389380635446" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,19 +52,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="arab_words_writer.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/recogn/arab_words_writer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="17" selection-start="442" selection-end="442" vertical-scroll-proportion="0.27985075">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="rec.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recogn/rec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="27" selection-start="4182" selection-end="4182" vertical-scroll-proportion="0.0">
+            <state line="92" column="25" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#24#67#0" expanded="true" />
               </folding>
@@ -77,39 +63,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="features.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recogn/features.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pydevd.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1123" column="0" selection-start="46950" selection-end="46950" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="recognition.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main/recognition.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="19" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="space.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="space.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/decompose/space.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="367" column="0" selection-start="13279" selection-end="13279" vertical-scroll-proportion="0.0">
+            <state line="365" column="8" selection-start="13170" selection-end="13170" vertical-scroll-proportion="0.33161953">
               <folding />
             </state>
           </provider>
@@ -118,16 +75,7 @@
       <file leaf-file-name="xycuts.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decompose/xycuts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="31" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="arabic_reshaper.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="231" column="0" selection-start="11100" selection-end="11212" vertical-scroll-proportion="-7.92">
+            <state line="37" column="0" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -152,7 +100,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/decompose/__init__.py" />
         <option value="$PROJECT_DIR$/decompose/childgarden.py" />
         <option value="$PROJECT_DIR$/main/mr.py" />
         <option value="$PROJECT_DIR$/main/__init__.py" />
@@ -164,18 +111,36 @@
         <option value="$PROJECT_DIR$/test/space_test.py" />
         <option value="$PROJECT_DIR$/recogn/junk.py" />
         <option value="$PROJECT_DIR$/recogn/features.py" />
-        <option value="$PROJECT_DIR$/recogn/arab_words_writer.py" />
-        <option value="$PROJECT_DIR$/decompose/space.py" />
         <option value="$PROJECT_DIR$/decompose/xycuts.py" />
         <option value="$PROJECT_DIR$/recogn/fontshit.py" />
+        <option value="$PROJECT_DIR$/recogn/arab_words_writer.py" />
+        <option value="$PROJECT_DIR$/decompose/space.py" />
+        <option value="$PROJECT_DIR$/recogn/rec.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-1" />
     <option name="y" value="-4" />
-    <option name="width" value="1682" />
-    <option name="height" value="1055" />
+    <option name="width" value="1368" />
+    <option name="height" value="773" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Google App Engine (Python)</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -203,7 +168,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -260,24 +224,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="recogn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="output" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -312,17 +258,18 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="File.Encoding" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../csc/stat" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="options.searchVisible" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../csc/stat" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -549,23 +496,27 @@
       <created>1371108294307</created>
       <updated>1371108294307</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add rec">
+      <created>1389193121351</created>
+      <updated>1389193121351</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-4" width="1682" height="1055" extended-state="6" />
-    <editor active="false" />
+    <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32343236" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32216907" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944155" sideWeight="0.6283892" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19339046" sideWeight="0.6182618" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43674368" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24318182" sideWeight="0.661882" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.43540668" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3817382" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33811802" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1416" height="676" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -582,8 +533,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="true" />
-    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <value>
         <are-packages-shown value="false" />
@@ -619,7 +570,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gitignore&#10;create junk.py - experiments with training set formation from text document&#10;create splitter.py - friendly interface for line/word decomposition&#10;add .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rec" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -635,6 +586,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="improve decomposition (algorithm reimplemented, tests added)&#10;__init__ files added to all modules&#10;recogn module added with alpha-version of feature learning&#10;" />
     <MESSAGE value="add gitignore&#10;create junk.py - experiments with training set formation from text document&#10;create splitter.py - friendly interface for line/word decomposition&#10;add .gitignore" />
+    <MESSAGE value="add rec" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -646,12 +598,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/test/space_test.py</url>
-          <line>30</line>
+          <line>31</line>
           <option name="timeStamp" value="160" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/test/space_test.py</url>
-          <line>58</line>
+          <line>59</line>
           <option name="timeStamp" value="168" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -666,17 +618,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/recogn/junk.py</url>
-          <line>90</line>
+          <line>87</line>
           <option name="timeStamp" value="232" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/recogn/junk.py</url>
-          <line>91</line>
+          <line>88</line>
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/recogn/junk.py</url>
-          <line>96</line>
+          <line>93</line>
           <option name="timeStamp" value="234" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -710,18 +662,23 @@
           <option name="timeStamp" value="266" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/recogn/rec.py</url>
-          <line>93</line>
-          <option name="timeStamp" value="280" />
+          <url>file://$PROJECT_DIR$/decompose/space.py</url>
+          <line>127</line>
+          <option name="timeStamp" value="294" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/decompose/space.py</url>
+          <line>137</line>
+          <option name="timeStamp" value="295" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="293" />
+      <option name="time" value="296" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.PyCharm20/system/python_stubs/348993582/__builtin__.py">
+    <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2423" column="8" selection-start="81124" selection-end="81124" vertical-scroll-proportion="0.0">
+        <state line="93" column="18" selection-start="5566" selection-end="5584" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -733,104 +690,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main/util.py">
+    <entry file="file:///usr/lib/python2.7/dist-packages/PIL/ImageFont.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="183" selection-end="183" vertical-scroll-proportion="0.0">
+        <state line="133" column="27" selection-start="4114" selection-end="4114" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file:///usr/lib/python2.7/dist-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="463" column="13" selection-start="11873" selection-end="11873" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/numpy/core/fromnumeric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2293" column="14" selection-start="64576" selection-end="64576" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/share/pyshared/PIL/ImageFont.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="46" selection-start="4539" selection-end="4563" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/share/pyshared/PIL/ImageDraw.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="268" column="0" selection-start="8200" selection-end="8200" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/lib/python2.7/dist-packages/PIL/ImageFont.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="148" column="0" selection-start="4517" selection-end="4517" vertical-scroll-proportion="0.33208954">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/recognition.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="118" selection-end="118" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/decompose/space.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="367" column="0" selection-start="13279" selection-end="13279" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1123" column="0" selection-start="46950" selection-end="46950" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="231" column="0" selection-start="11100" selection-end="11212" vertical-scroll-proportion="-7.92">
+        <state line="1749" column="16" selection-start="55401" selection-end="55401" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decompose/xycuts.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="31" selection-start="1075" selection-end="1075" vertical-scroll-proportion="0.0">
+        <state line="37" column="0" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recogn/rec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="27" selection-start="4182" selection-end="4182" vertical-scroll-proportion="0.0">
+        <state line="92" column="25" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#24#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/features.py">
+    <entry file="file://$PROJECT_DIR$/decompose/space.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/arab_words_writer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="442" selection-end="442" vertical-scroll-proportion="0.27985075">
+        <state line="365" column="8" selection-start="13170" selection-end="13170" vertical-scroll-proportion="0.33161953">
           <folding />
         </state>
       </provider>

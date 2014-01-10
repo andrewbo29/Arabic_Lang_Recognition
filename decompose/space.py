@@ -23,7 +23,7 @@ def doSplit(line):
     wry_slices = filter(lambda ws: brute_wry_filter(line, central_ind, ws, straight_spaces), wry_slices)
     #    if len(wry_slices) + len(straight_spaces) == 0:
     #        return line
-    return _makeWords(line, word_spaces, symbol_spaces, wry_slices)
+    return makeWords(line, word_spaces, symbol_spaces, wry_slices)
 
 
 def brute_wry_filter(line, central_ind, wry_slice, straight_spaces):
@@ -125,6 +125,7 @@ def _filter_word_spaces(zone, straight_spaces):
     min_len = np.min(lens)
     max_len = np.max(lens)
     border = min_len + (max_len - min_len) * _MAGIC_NUMBER_B
+    # border = np.median(lens) * _MAGIC_NUMBER_B
     word_spaces = []
     symbols_spaces = []
     for space in straight_spaces:
@@ -366,6 +367,12 @@ class Zone:
         return Zone(self.im,
                     (self.horizontal[0] + horizontal[0], self.horizontal[0] + horizontal[1]),
                     (self.vertical[0] + vertical[0], self.vertical[0] + vertical[1]))
+
+    def width(self):
+        return self.horizontal[1] - self.horizontal[0]
+
+    def height(self):
+        return self.vertical[1] - self.vertical[0]
 
 
 class Word(Zone):
