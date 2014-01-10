@@ -6,22 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="97a9bb64-80ea-4241-a57d-75e5103586bc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recogn/rec.py" afterPath="$PROJECT_DIR$/recogn/rec.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/space.py" afterPath="$PROJECT_DIR$/decompose/space.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/util.py" afterPath="$PROJECT_DIR$/decompose/util.py" />
     </list>
     <ignored path="Arabic_Lang_Recognition.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389373242127" ignored="false" />
     <file path="/split_to_strings.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1370284552391" ignored="false" />
     <file path="/iutil.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363712518906" ignored="false" />
-    <file path="/util.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363714910987" ignored="false" />
+    <file path="/util.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389396219061" ignored="false" />
     <file path="/a.dummy" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1386194572394" ignored="false" />
     <file path="/recognition.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363778990581" ignored="false" />
     <file path="/main.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363781271321" ignored="false" />
     <file path="/space.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389380476895" ignored="false" />
     <file path="/a.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371060188423" ignored="false" />
     <file path="/childgarden.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1369482057755" ignored="false" />
-    <file path="/fragment.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389379267398" ignored="false" />
+    <file path="/fragment.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389395426225" ignored="false" />
     <file path="/centralline.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371017755154" ignored="false" />
     <file path="/xycuts.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389191985366" ignored="false" />
     <file path="/space_test.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1379578630732" ignored="false" />
@@ -32,7 +31,7 @@
     <file path="/splitter.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371632738203" ignored="false" />
     <file path="/arab_words_writer.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389108685722" ignored="false" />
     <file path="/fontshit.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389193007413" ignored="false" />
-    <file path="/rec.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389380635446" ignored="false" />
+    <file path="/rec.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389396308660" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +54,7 @@
       <file leaf-file-name="rec.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recogn/rec.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="25" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0">
+            <state line="145" column="0" selection-start="4325" selection-end="4325" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#24#67#0" expanded="true" />
               </folding>
@@ -63,10 +62,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="space.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="input.bmp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/recogn/workDir/input.bmp">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="space.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/decompose/space.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="365" column="8" selection-start="13170" selection-end="13170" vertical-scroll-proportion="0.33161953">
+            <state line="137" column="0" selection-start="5504" selection-end="5504" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -76,6 +82,53 @@
         <entry file="file://$PROJECT_DIR$/decompose/xycuts.py">
           <provider selected="true" editor-type-id="text-editor">
             <state line="37" column="0" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="arabic_reshaper.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="217" column="0" selection-start="10679" selection-end="10679" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="childgarden.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/decompose/childgarden.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="46" vertical-scroll-proportion="-0.0">
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="temp.bmp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/decompose/temp.bmp">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="util.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/decompose/util.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="15" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shutil.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python2.7/shutil.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="207" column="4" selection-start="6305" selection-end="6305" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -100,7 +153,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/decompose/childgarden.py" />
         <option value="$PROJECT_DIR$/main/mr.py" />
         <option value="$PROJECT_DIR$/main/__init__.py" />
         <option value="$PROJECT_DIR$/main/split_to_strings.py" />
@@ -115,6 +167,7 @@
         <option value="$PROJECT_DIR$/recogn/fontshit.py" />
         <option value="$PROJECT_DIR$/recogn/arab_words_writer.py" />
         <option value="$PROJECT_DIR$/decompose/space.py" />
+        <option value="$PROJECT_DIR$/decompose/util.py" />
         <option value="$PROJECT_DIR$/recogn/rec.py" />
       </list>
     </option>
@@ -211,6 +264,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="recogn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Arabic_Lang_Recognition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="recogn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="workDir" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -667,29 +738,15 @@
           <option name="timeStamp" value="294" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/decompose/space.py</url>
-          <line>137</line>
-          <option name="timeStamp" value="295" />
+          <url>file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py</url>
+          <line>214</line>
+          <option name="timeStamp" value="297" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="296" />
+      <option name="time" value="298" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="18" selection-start="5566" selection-end="5584" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/decompose/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python2.7/dist-packages/PIL/ImageFont.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="133" column="27" selection-start="4114" selection-end="4114" vertical-scroll-proportion="0.0">
@@ -711,20 +768,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/decompose/space.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="0" selection-start="5504" selection-end="5504" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple_words_in_string_detection/arabic_reshaper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="0" selection-start="10679" selection-end="10679" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decompose/temp.bmp">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decompose/childgarden.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="46" vertical-scroll-proportion="-0.0">
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/shutil.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="207" column="4" selection-start="6305" selection-end="6305" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decompose/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="15" selection-start="293" selection-end="293" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recogn/workDir/dict/glyph_0.bmp">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/recogn/rec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="25" selection-start="2638" selection-end="2638" vertical-scroll-proportion="0.0">
+        <state line="145" column="0" selection-start="4325" selection-end="4325" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#24#67#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/decompose/space.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="365" column="8" selection-start="13170" selection-end="13170" vertical-scroll-proportion="0.33161953">
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/recogn/workDir/input.bmp">
+      <provider selected="true" editor-type-id="images">
+        <state />
       </provider>
     </entry>
   </component>

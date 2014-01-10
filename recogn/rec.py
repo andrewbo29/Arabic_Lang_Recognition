@@ -8,6 +8,10 @@ from bidi.algorithm import get_display
 import simple_words_in_string_detection.arabic_reshaper as arabic_reshaper
 import decompose.xycuts as xycuts
 import decompose.util as util
+from decompose.util import writeGrayIm
+from decompose.util import readGrayIm
+from decompose.util import remakeDir
+from decompose.util import makeDir
 from decompose.space import Zone
 import decompose.space as space
 
@@ -28,7 +32,7 @@ def unicode_to_image(uni):
     d_usr = ImageDraw.Draw(image)
     d_usr.text((20, 20), uni, fill=0, font=FONT)
     image.save("test.bmp")
-    zone = Zone(util.readGrayIm("test.bmp"))
+    zone = Zone(readGrayIm("test.bmp"))
     zone = xycuts.cut_edges(zone)
     return zone.extract()
 
@@ -115,26 +119,34 @@ def im_dist(im1, im2):
 
 #создаем строку
 
+DIR = remakeDir("workDir/")
+DICTIONARY = makeDir(DIR + "dict/")
+RESULTS = makeDir(DIR + "results/")
+
 image = Image.new("L", (500, 100), 255)
 d_usr = ImageDraw.Draw(image)
 reshaped_text = arabic_reshaper.reshape(u'الله يكون معك')
 bidi_text = get_display(reshaped_text)
 d_usr = d_usr.text((20, 20), bidi_text, fill=0, font=FONT)
-image.save("input.bmp")
-input_image = Zone(util.readGrayIm("input.bmp"))
+image.save(DIR + "input.bmp")
+input_image = Zone(readGrayIm(DIR + "input.bmp"))
+
 
 glyph_dict = makeDictionary()
+for i, glyph in enumerate(glyph_dict):
+    writeGrayIm(DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
+
 words = words_from_line(input_image)
 
 for index, w in enumerate(words):
     # печатаем распознанное
-    util.writeGrayIm("word_%s.bmp" % index, w.extract())
-    util.writeGrayIm("word_rec_%s.bmp" % index,
+    writeGrayIm(RESULTS + "word_%s.bmp" % index, w.extract())
+    writeGrayIm(RESULTS + "word_rec_%s.bmp" % index,
                      unicode_to_image(get_display(arabic_reshaper.reshape(recognize_word(glyph_dict, w)))))
 
 
 
-# util.writeGrayIm("t1.bmp", unicode_to_image(''.join([u'\u3BA6', u'\uFEF6', u'\uFEF5'])))
-# util.writeGrayIm("t2.bmp", unicode_to_image(arabic_reshaper.reshape(u''.join([u'\u3BA6', u'\uFEF6', u'\uFEF5']))))
-# util.writeGrayIm("t3.bmp", unicode_to_image(get_display(arabic_reshaper.reshape(u''.join([u'\u3BA6', u'\uFEF6', u'\uFEF5'])))))
+# writeGrayIm("t1.bmp", unicode_to_image(''.join([u'\u3BA6', u'\uFEF6', u'\uFEF5'])))
+# writeGrayIm("t2.bmp", unicode_to_image(arabic_reshaper.reshape(u''.join([u'\u3BA6', u'\uFEF6', u'\uFEF5']))))
+# writeGrayIm("t3.bmp", unicode_to_image(get_display(arabic_reshaper.reshape(u''.join([u'\u3BA6', u'\uFEF6', u'\uFEF5'])))))
 

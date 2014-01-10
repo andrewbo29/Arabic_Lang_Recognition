@@ -1,4 +1,23 @@
 import cv2
+from shutil import rmtree
+from os import mkdir
+
+# ------ create - delete folders routine -------
+
+
+def deleteDir(path):
+    rmtree(path)
+    return path
+
+def makeDir(path):
+    mkdir(path)
+    return path
+
+
+def remakeDir(path):
+    rmtree(path, True)
+    mkdir(path)
+    return path
 
 # ----------- read - write routine -------------
 
