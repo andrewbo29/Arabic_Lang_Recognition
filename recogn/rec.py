@@ -10,8 +10,7 @@ import decompose.xycuts as xycuts
 from decompose.util import readGrayIm
 from decompose.space import Zone
 import decompose.space as space
-
-
+import warnings
 
 
 # print len(arabic_reshaper.ARABIC_GLYPHS.items())
@@ -28,6 +27,7 @@ THRESHOLD = 0.75
 
 
 def dependencies_for_myprogram():
+    from scipy.sparse.csgraph import _validation
 
 
 def unicode_to_image(uni):
@@ -241,6 +241,10 @@ def im_dist2(im1, im2):
     return similar / min_width / min_height
 
 
+def fxn():
+    warnings.warn("deprecated", DeprecationWarning)
+
+
 def im_dist3(im1, im2):
     """
     расстояние между двумя картинками
@@ -249,7 +253,13 @@ def im_dist3(im1, im2):
     min_height = min(im1.shape[0], im2.shape[0])
     sub_im_array1 = im1[0:min_height, 0:min_width].flatten()
     sub_im_array2 = im2[0:min_height, 0:min_width].flatten()
-    return pearsonr(sub_im_array1, sub_im_array2)[0]
+    res = 0
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore")
+        fxn()
+        res = pearsonr(sub_im_array1, sub_im_array2)[0]
+    # return pearsonr(sub_im_array1, sub_im_array2)[0]
+    return res
 
 
 #создаем строку
