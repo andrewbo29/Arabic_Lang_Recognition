@@ -14,6 +14,9 @@ from decompose.util import remakeDir
 from decompose.util import makeDir
 from decompose.space import Zone
 import decompose.space as space
+from scipy.stats import pearsonr
+from decompose.splitter import intersects
+from decompose.splitter import intersection
 
 
 # print len(arabic_reshaper.ARABIC_GLYPHS.items())
@@ -22,13 +25,15 @@ import decompose.space as space
 #     print s
 SIZE = 60
 FONT = ImageFont.truetype("/home/obus/Downloads/trado.ttf", SIZE)
+MAX_OVERLAP = 0.3
+MAX_SAME_OVERLAP = 0.2
 
 
 def unicode_to_image(uni):
     """
     переводит unicode в картинку (ваш КО)
     """
-    image = Image.new("L", (SIZE * len(uni), SIZE * 2), 255)
+    image = Image.new("L", (int(SIZE * len(uni) * 2), SIZE * 3), 255)
     d_usr = ImageDraw.Draw(image)
     d_usr.text((20, 20), uni, fill=0, font=FONT)
     image.save("test.bmp")
@@ -42,6 +47,7 @@ def words_from_line(line):
     вытаскивае слова из строки
     """
     word_spaces, symbols_spaces, other_spaces = space.splitToSpaces(line)
+    word_spaces = [ws for ws in word_spaces if ws[1] - ws[0] > SIZE / 10]
     words = space.makeWords(line, word_spaces, [], [])
     words = [xycuts.cut_edges(w) for w in words]
     return words
@@ -54,6 +60,9 @@ def makeDictionary():
     glyphs = []
     for v in arabic_reshaper.ARABIC_GLYPHS_LIST:
         for uni in v[0:(len(v) - 1)]:
+            glyphs.append(Glyph(uni, unicode_to_image(uni)))
+    for l in arabic_reshaper.LAM_ALEF_GLYPHS:
+        for uni in l:
             glyphs.append(Glyph(uni, unicode_to_image(uni)))
     return glyphs
 
@@ -78,6 +87,95 @@ def recognize_word(glyph_dict, word):
         unicode_glyphs.append(uni)
         offset += width
     return arabic_reshaper.reshape(u''.join(unicode_glyphs))
+
+
+class Hit(object):
+    def __init__(self, glyph, place, score):
+        self.glyph = glyph
+        self.place = place
+        self.score = score
+
+    def __cmp__(self, other):
+        assert isinstance(other, Hit)
+        return cmp(self.score, other.score)
+
+    def __str__(self):
+        return "%s : %s" % (self.place, self.score)
+
+
+def recognize_word_brute(glyph_dict, word):
+    """
+    распознает слово, возвращает юникод
+    """
+    glyphs_hits = []
+    for glyph in glyph_dict:
+        hits = find_glyph_hits_in_word_brute(glyph, word)
+        if hits:
+            glyphs_hits.append((glyph, hits))
+    all_hits = []
+    for glyph_hits in glyphs_hits:
+        all_hits.extend(filter_overlapped_hits_for_same_glyph(glyph_hits[1]))
+    all_ranked_hits = sorted(all_hits, reverse=True)
+    non_overlapped_hits = filter_overlapped_hits(all_ranked_hits)
+    non_overlapped_hits = sorted(non_overlapped_hits,
+                                 cmp=lambda a, b: cmp(a.place[0], b.place[0]), reverse=True)
+    return u''.join([hit.glyph.uni for hit in non_overlapped_hits])
+
+
+def filter_overlapped_hits_for_same_glyph(hits):
+    non_overlapped_hits = []
+    for hit in hits:
+        if not any([is_overlapped(no_hit.place, hit.place, MAX_SAME_OVERLAP) for no_hit in non_overlapped_hits]):
+            non_overlapped_hits.append(hit)
+    return non_overlapped_hits
+
+
+def is_overlapped(place_a, place_b, max_overlap):
+        overlap = float(intersection(place_a, place_b))
+        overlap_rate = overlap / min(place_a[1] - place_a[0], place_b[1] - place_b[0])
+        return overlap_rate > max_overlap
+
+
+def filter_overlapped_hits(hits):
+    for hit in hits:
+        hit.score = hit.score * math.log(hit.place[1] - hit.place[0])
+    hits = sorted(hits, reverse=True)
+    non_overlapped_hits = []
+    for hit in hits:
+        if not any([is_overlapped(no_hit.place, hit.place, MAX_OVERLAP) for no_hit in non_overlapped_hits]):
+            non_overlapped_hits.append(hit)
+    return non_overlapped_hits
+
+
+def find_glyph_hits_in_word_brute(glyph, word):
+    # """
+    # ищет вхождения глифа в слово
+    # """
+    glyph_width = glyph.im.shape[1]
+    hits = []
+    if word.width() < glyph_width:
+        if glyph_width - word.width() == 1:
+            glyph = Glyph(glyph.uni, glyph.im[:, 1:glyph_width])
+            glyph_width -= 1
+        elif glyph_width - word.width() == 2:
+            glyph = Glyph(glyph.uni, glyph.im[:, 1:(glyph_width-1)])
+            glyph_width -= 2
+        else:
+            return []
+    for right in range(word.width(), glyph_width - 1, -1):
+        if sum(sum(word.relativeZone((right - 1, right)).extract())) == 0:
+            continue
+        left = right - glyph_width
+        place = (left, right)
+        im_zone = xycuts.cut_edges(word.relativeZone(horizontal=place))
+        if im_zone.width() < 3 or im_zone.height() < 5:
+            print "WARN: too small image"
+            continue
+        dist = im_dist3(im_zone.extract(), glyph.im)
+        if dist > 0.75:
+            print dist
+            hits.append(Hit(glyph, place, dist))
+    return sorted(hits, reverse=True)
 
 
 def recognize_glyph(glyph_dict, word, glyph_offset):
@@ -105,6 +203,10 @@ def recognize_glyph(glyph_dict, word, glyph_offset):
 
 
 def im_dist(im1, im2):
+    return im_dist1(im1, im2)
+
+
+def im_dist1(im1, im2):
     """
     расстояние между двумя картинками
     """
@@ -117,6 +219,30 @@ def im_dist(im1, im2):
     return similar / total
 
 
+def im_dist2(im1, im2):
+    """
+    расстояние между двумя картинками
+    """
+    min_width = min(im1.shape[1], im2.shape[1])
+    min_height = min(im1.shape[0], im2.shape[0])
+    sub_im1 = im1[0:min_height, 0:min_width]
+    sub_im2 = im2[0:min_height, 0:min_width]
+    similar = numpy.sum(abs(sub_im1 - sub_im2))
+    return similar / min_width / min_height
+
+
+def im_dist3(im1, im2):
+    """
+    расстояние между двумя картинками
+    """
+    min_width = min(im1.shape[1], im2.shape[1])
+    min_height = min(im1.shape[0], im2.shape[0])
+    sub_im_array1 = im1[0:min_height, 0:min_width].flatten()
+    sub_im_array2 = im2[0:min_height, 0:min_width].flatten()
+    (cor, p_value) = pearsonr(sub_im_array1, sub_im_array2)
+    return cor
+
+
 #создаем строку
 
 DIR = remakeDir("workDir/")
@@ -125,7 +251,9 @@ RESULTS = makeDir(DIR + "results/")
 
 image = Image.new("L", (500, 100), 255)
 d_usr = ImageDraw.Draw(image)
-reshaped_text = arabic_reshaper.reshape(u'الله يكون معك')
+# reshaped_text = arabic_reshaper.reshape(u'لا إله إلا الله')
+# reshaped_text = arabic_reshaper.reshape(u'الله يكون معك')
+reshaped_text = arabic_reshaper.reshape(u'لا إله إلا الله وأن محمدا رسول الله')
 bidi_text = get_display(reshaped_text)
 d_usr = d_usr.text((20, 20), bidi_text, fill=0, font=FONT)
 image.save(DIR + "input.bmp")
@@ -142,7 +270,7 @@ for index, w in enumerate(words):
     # печатаем распознанное
     writeGrayIm(RESULTS + "word_%s.bmp" % index, w.extract())
     writeGrayIm(RESULTS + "word_rec_%s.bmp" % index,
-                     unicode_to_image(get_display(arabic_reshaper.reshape(recognize_word(glyph_dict, w)))))
+                     unicode_to_image(get_display(arabic_reshaper.reshape(recognize_word_brute(glyph_dict, w)))))
 
 
 

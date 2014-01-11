@@ -20,6 +20,14 @@ def intersects(space1, space2):
         (space2[0] < space1[0] and space1[1] < space2[1])
 
 
+def intersection(space1, space2):
+    if space1[0] <= space2[0] <= space1[1]:
+        return min(space1[1], space2[1]) - space2[0]
+    if space2[0] <= space1[0] <= space2[1]:
+        return min(space1[1], space2[1]) - space1[0]
+    return 0
+
+
 class WordSpace(object):
     """
     object incapsulate part of image contain word

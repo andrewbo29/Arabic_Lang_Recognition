@@ -363,7 +363,11 @@ class Zone:
     def absoluteZone(self, horizontal, vertical):
         return Zone(self.im, horizontal, vertical)
 
-    def relativeZone(self, horizontal, vertical):
+    def relativeZone(self, horizontal=None, vertical=None):
+        if horizontal is None:
+            horizontal = (0, self.horizontal[1] - self.horizontal[0])
+        if vertical is None:
+            vertical = (0, self.vertical[1] - self.vertical[0])
         return Zone(self.im,
                     (self.horizontal[0] + horizontal[0], self.horizontal[0] + horizontal[1]),
                     (self.vertical[0] + vertical[0], self.vertical[0] + vertical[1]))
