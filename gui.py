@@ -1,5 +1,4 @@
 from Tkinter import *
-from ttk import *
 from tkFileDialog import askopenfilename
 from tkMessageBox import showerror
 from ttk import Combobox, Progressbar
@@ -126,9 +125,6 @@ class MyFrame(Frame):
     def process(self):
         if self.im_filename:
             try:
-                DIR = remakeDir("workDir/")
-                DICTIONARY = makeDir(DIR + "dict/")
-                RESULTS = makeDir(DIR + "results/")
 
                 font_file = self.fontier.font_files()[self.fontier.fonts_names().index(self.font_combobox.get())]
                 rec.FONT = ImageFont.truetype(font_file, SIZE)
@@ -137,7 +133,7 @@ class MyFrame(Frame):
                 input_image = Zone(readGrayIm(self.im_filename))
                 glyph_dict = makeDictionary()
                 for i, glyph in enumerate(glyph_dict):
-                    writeGrayIm(DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
+                    writeGrayIm(_DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
 
                 words = words_from_line(input_image)
 
@@ -146,7 +142,7 @@ class MyFrame(Frame):
                 text_file = open(self.text_filename, 'w')
                 for index, w in enumerate(words):
                     rec_word = recognize_word_brute(glyph_dict, w)
-                    writeGrayIm(RESULTS + "%s_word_rec.bmp" % index,
+                    writeGrayIm(_RESULTS + "%s_word_rec.bmp" % index,
                                 unicode_to_image(
                                     get_display(arabic_reshaper.reshape(rec_word))))
 

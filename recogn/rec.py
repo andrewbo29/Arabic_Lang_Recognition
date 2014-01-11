@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import math
 
-from PIL import Image, ImageFont, ImageDraw
+from PIL import Image, ImageDraw
 import numpy
 from scipy.stats import pearsonr
 
@@ -12,16 +12,8 @@ from decompose.space import Zone
 import decompose.space as space
 
 
-
-
-# print len(arabic_reshaper.ARABIC_GLYPHS.items())
-# for k, v in arabic_reshaper.ARABIC_GLYPHS.items():
-#     s = u' '.join(v[0:(len(v) - 1)])
-#     print s
 SIZE = 60
-FONT = ImageFont.truetype(
-    "D:/Development/Projects/Arabic Language/Arabic_Lang_Recogn_Branch/Arabic_Lang_Recognition/resources/fonts/TRADO.ttf",
-    SIZE)
+FONT = None
 MAX_OVERLAP = 0.3
 MAX_SAME_OVERLAP = 0.2
 THRESHOLD = 0.75
