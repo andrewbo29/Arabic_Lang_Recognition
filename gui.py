@@ -16,17 +16,18 @@ import recogn.rec as rec
 from decompose.util import remakeDir, makeDir, writeGrayIm
 
 
-_CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+_CURRENT_DIR = os.getcwd()
 _DIR = remakeDir(join(_CURRENT_DIR, "workDir/"))
 _DICTIONARY = makeDir(_DIR + "dict/")
 _RESULTS = makeDir(_DIR + "results/")
-_RESOURCES_DIR = join(_CURRENT_DIR, "resources/")
-_FONTS_DIR = _RESOURCES_DIR + "fonts/"
+_RESOURCES_DIR = join(_CURRENT_DIR, "resources")
+_FONTS_DIR = join(_RESOURCES_DIR, "fonts")
 
 
 class Fontier(object):
     def __init__(self, path):
         self.path = path
+        print(path)
 
     def _file_names_in_dir(self):
         return [f for f in listdir(self.path) if isfile(join(self.path, f))]
@@ -106,7 +107,7 @@ class MyFrame(Frame):
         self.label_progress = Label(self, text="Progress: ")
         self.label_progress.grid(row=9, column=1, sticky=E, pady=20)
 
-        self.progressbar = Progressbar(self, orient="horizontal", length=245, mode="determinate")
+        self.progressbar = Progressbar(self, orient="horizontal", length=220, mode="determinate")
         self.progressbar.grid(row=9, column=2, sticky=E, pady=20)
 
     def load_file(self):
