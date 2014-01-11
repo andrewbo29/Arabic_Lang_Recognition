@@ -1,10 +1,15 @@
 from Tkinter import *
+from ttk import *
 from tkFileDialog import askopenfilename
 from tkMessageBox import showerror
 
 from rec import *
 import os
 import tkFont
+
+DIR = remakeDir("workDir/")
+DICTIONARY = makeDir(DIR + "dict/")
+RESULTS = makeDir(DIR + "results/")
 
 
 class MyFrame(Frame):
@@ -36,16 +41,22 @@ class MyFrame(Frame):
         self.text_output.grid(row=2, column=2)
 
         self.button_start = Button(self, text="Start", command=self.process, width=10)
-        self.button_start.grid(row=3, column=0, sticky=W)
+        self.button_start.grid(row=4, column=0, sticky=W)
 
-        self.label_done = Label(self)
-        self.label_done.grid(row=3, column=1)
+        self.button_show = Button(self, text="Recognized words", command=self.show_rec, state=DISABLED)
+        self.button_show.grid(row=4, column=1, sticky=W)
 
         self.button_close = Button(self, text="Close", command=sys.exit, width=10)
-        self.button_close.grid(row=3, column=2, sticky=W)
+        self.button_close.grid(row=4, column=2, sticky=E)
 
         self.im_filename = ''
         self.text_filename = ''
+
+        self.label_progress = Label(self, text="Progress: ")
+        self.label_progress.grid(row=3, column=1, sticky=E)
+
+        self.progressbar = Progressbar(self, orient="horizontal", length=214, mode="determinate")
+        self.progressbar.grid(row=3, column=2)
 
     def load_file(self):
         fname = askopenfilename(filetypes=(("Text", "*.bmp"), ("All files", "*.*")))
@@ -63,33 +74,47 @@ class MyFrame(Frame):
 
     def process(self):
         if self.im_filename:
-            try:
-                DIR = remakeDir("workDir/")
-                DICTIONARY = makeDir(DIR + "dict/")
-                RESULTS = makeDir(DIR + "results/")
+            # try:
+            input_image = Zone(readGrayIm(self.im_filename))
+            glyph_dict = makeDictionary()
+            for i, glyph in enumerate(glyph_dict):
+                writeGrayIm(DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
 
-                input_image = Zone(readGrayIm(self.im_filename))
-                glyph_dict = makeDictionary()
-                for i, glyph in enumerate(glyph_dict):
-                    writeGrayIm(DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
+            words = words_from_line(input_image)
 
-                words = words_from_line(input_image)
+            self.progressbar["value"] = 0
+            self.progressbar["maximum"] = len(words)
+            text_file = open(self.text_filename, 'w')
+            val = 0
+            for index, w in enumerate(words):
+                rec_word = recognize_word_brute(glyph_dict, w)
+                # writeGrayIm(RESULTS + "%s_word.bmp" % index, w.extract())
+                writeGrayIm(RESULTS + "%s_word_rec.bmp" % index,
+                            unicode_to_image(
+                                get_display(arabic_reshaper.reshape(rec_word))))
+                text_file.write(rec_word.encode('utf-8') + ' ')
+                val += 1
+                self.progressbar["value"] = val
+                self.update_idletasks()
+            self.progressbar.stop()
 
-                for index, w in enumerate(words):
-                    writeGrayIm(RESULTS + "%s_word.bmp" % index, w.extract())
-                    writeGrayIm(RESULTS + "%s_word_rec.bmp" % index,
-                                unicode_to_image(
-                                    get_display(arabic_reshaper.reshape(recognize_word_brute(glyph_dict, w)))))
+            text_file.close()
 
-                self.label_done.config(text='Done!')
+            self.button_show.config(state=ACTIVE)
 
-                progr_name = 'notepad.exe'
-                osCommandString = ' '.join([progr_name, self.text_filename])
-                os.system(osCommandString)
+            progr_name = 'notepad.exe'
+            osCommandString = ' '.join([progr_name, self.text_filename])
+            os.system(osCommandString)
 
-            except:
-                showerror("Open Source File", "Failed to read file\n'%s'" % self.im_filename)
+            # except:
+            #     showerror("Open Source File", "Failed to read file\n'%s'" % self.im_filename)
             return
+
+    def show_rec(self):
+        progr_name = 'explorer'
+        path = os.path.abspath(RESULTS)
+        osCommandString = ' '.join([progr_name, path])
+        os.system(osCommandString)
 
 
 if __name__ == "__main__":
