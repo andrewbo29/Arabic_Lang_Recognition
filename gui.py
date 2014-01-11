@@ -1,11 +1,11 @@
 from Tkinter import *
 from ttk import *
 from tkFileDialog import askopenfilename
-from tkMessageBox import showerror
-
-from rec import *
 import os
 import tkFont
+
+from recogn.rec import *
+
 
 DIR = remakeDir("workDir/")
 DICTIONARY = makeDir(DIR + "dict/")
