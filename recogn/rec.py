@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 import math
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageFont, ImageDraw
 import numpy
 from scipy.stats import pearsonr
 
@@ -20,6 +20,7 @@ THRESHOLD = 0.75
 
 
 def dependencies_for_myprogram():
+    from scipy.sparse.csgraph import _validation
 
 
 def unicode_to_image(uni):

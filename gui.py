@@ -1,4 +1,5 @@
 from Tkinter import *
+from ttk import *
 from tkFileDialog import askopenfilename
 from tkMessageBox import showerror
 from ttk import Combobox, Progressbar
