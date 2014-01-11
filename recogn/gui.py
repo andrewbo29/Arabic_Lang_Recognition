@@ -1,17 +1,25 @@
 from Tkinter import *
 from tkFileDialog import askopenfilename
 from tkMessageBox import showerror
-from ttk import Combobox
+from ttk import Combobox, Progressbar
 import os
 from os import listdir
 from os.path import isfile, join
 import tkFont
+import webbrowser
+
+from bidi.algorithm import get_display
 
 import rec
 from rec import *
+from decompose.util import remakeDir, makeDir, writeGrayIm
 
 
-_RESOURCES_DIR = "../resources/"
+_CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+_DIR = remakeDir(join(_CURRENT_DIR, "workDir/"))
+_DICTIONARY = makeDir(_DIR + "dict/")
+_RESULTS = makeDir(_DIR + "results/")
+_RESOURCES_DIR = join(_CURRENT_DIR, "../resources/")
 _FONTS_DIR = _RESOURCES_DIR + "fonts/"
 
 
@@ -33,12 +41,13 @@ class MyFrame(Frame):
     def __init__(self):
         Frame.__init__(self)
         self.master.title("Arabic text recognizer")
-        self.master.rowconfigure(5, weight=1)
+        self.master.rowconfigure(11, weight=1)
         self.master.columnconfigure(5, weight=1)
         self.grid(sticky=W + E + N + S)
 
         font = tkFont.Font(family='Times New Romans', size=9)
 
+        # ---------Input image and output file ----------
         self.label_input = Label(self, text="Image: ")
         self.label_input.grid(row=1, column=0)
 
@@ -57,35 +66,47 @@ class MyFrame(Frame):
         self.text_output = Text(self, height=1, width=30, font=font)
         self.text_output.grid(row=2, column=2)
 
+        # --------- Start, Show Results and Close buttons ----------
         self.button_start = Button(self, text="Start", command=self.process, width=10)
-        self.button_start.grid(row=4, column=0, sticky=W)
+        self.button_start.grid(row=9, column=0, sticky=W)
 
-        self.label_done = Label(self)
-        self.label_done.grid(row=4, column=1)
+        self.button_show = Button(self, text="Recognized words", command=self.show_rec, state=DISABLED)
+        self.button_show.grid(row=9, column=1, sticky=W)
 
         self.button_close = Button(self, text="Close", command=sys.exit, width=10)
-        self.button_close.grid(row=4, column=2, sticky=W)
+        self.button_close.grid(row=9, column=2, sticky=W)
+
+        # ------------------- Options in Frame -----------------------
+
+        self.label_output = Label(self, text="Options: ")
+        self.label_output.grid(row=5, column=0)
 
         self.label_threshold = Label(self, text="Threshold: ")
-        self.label_threshold.grid(row=3, column=0, sticky=W)
+        self.label_threshold.grid(row=6, column=1, sticky=W)
 
         self.input_threshold = Entry(self)
         self.input_threshold.delete(0, END)
         self.input_threshold.insert(0, "0.75")
-        self.input_threshold.grid(row=3, column=1, sticky=W)
+        self.input_threshold.grid(row=6, column=2, sticky=W)
 
         self.label_threshold = Label(self, text="Font: ")
-        self.label_threshold.grid(row=3, column=2, sticky=W)
+        self.label_threshold.grid(row=7, column=1, sticky=W)
 
         self.fontier = Fontier(_FONTS_DIR)
         self.font_combobox = Combobox(self,
                                       height=min(5, len(self.fontier.fonts_names())),
                                       values=self.fontier.fonts_names())
         self.font_combobox.set(self.fontier.fonts_names()[0])
-        self.font_combobox.grid(row=3, column=3, sticky=W)
+        self.font_combobox.grid(row=7, column=2, sticky=W)
 
         self.im_filename = ''
         self.text_filename = ''
+
+        self.label_progress = Label(self, text="Progress: ")
+        self.label_progress.grid(row=11, column=1, sticky=E)
+
+        self.progressbar = Progressbar(self, orient="horizontal", length=214, mode="determinate")
+        self.progressbar.grid(row=11, column=2)
 
     def load_file(self):
         fname = askopenfilename(filetypes=(("Text", "*.bmp"), ("All files", "*.*")))
@@ -104,7 +125,6 @@ class MyFrame(Frame):
     def process(self):
         if self.im_filename:
             try:
-                self.label_done.config(text='In progress...')
                 DIR = remakeDir("workDir/")
                 DICTIONARY = makeDir(DIR + "dict/")
                 RESULTS = makeDir(DIR + "results/")
@@ -120,22 +140,37 @@ class MyFrame(Frame):
 
                 words = words_from_line(input_image)
 
+                self.progressbar["value"] = 0
+                self.progressbar["maximum"] = len(words)
+                text_file = open(self.text_filename, 'w')
                 for index, w in enumerate(words):
-                    writeGrayIm(RESULTS + "%s_word.bmp" % index, w.extract())
+                    rec_word = recognize_word_brute(glyph_dict, w)
+                    #writeGrayIm(RESULTS + "%s_word.bmp" % index, w.extract())
                     writeGrayIm(RESULTS + "%s_word_rec.bmp" % index,
                                 unicode_to_image(
-                                    get_display(arabic_reshaper.reshape(recognize_word_brute(glyph_dict, w)))))
+                                    get_display(arabic_reshaper.reshape(rec_word))))
 
-                self.label_done.config(text='Done!')
+                    text_file.write(rec_word.encode('utf-8') + ' ')
+                    self.progressbar["value"] = index + 1
+                    self.update_idletasks()
+
+                text_file.close()
+                self.button_show.config(state=ACTIVE)
 
                 progr_name = 'notepad.exe'
                 osCommandString = ' '.join([progr_name, self.text_filename])
                 os.system(osCommandString)
 
-            except ArithmeticError as e:
-                print e
-                showerror("Open Source File", "Failed to read file\n'%s'.\n Exception: %s" % (self.im_filename, e))
+            except:
+                showerror("Open Source File", "Failed to read file\n'%s'" % self.im_filename)
             return
+
+    def show_rec(self):
+        webbrowser.open(_RESULTS)
+        # progr_name = 'explorer'
+        # path = os.path.abspath(_RESULTS)
+        # osCommandString = ' '.join([progr_name, path])
+        # os.system(osCommandString)
 
 
 if __name__ == "__main__":
