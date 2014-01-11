@@ -1,19 +1,16 @@
 # -*- coding: UTF-8 -*-
-from PIL import Image, ImageFont, ImageDraw
-import numpy
 import math
 
-from bidi.algorithm import get_display
+from PIL import Image, ImageFont, ImageDraw
+import numpy
+from scipy.stats import pearsonr
 
 import simple_words_in_string_detection.arabic_reshaper as arabic_reshaper
 import decompose.xycuts as xycuts
-from decompose.util import writeGrayIm
 from decompose.util import readGrayIm
-from decompose.util import remakeDir
-from decompose.util import makeDir
 from decompose.space import Zone
 import decompose.space as space
-from scipy.stats import pearsonr
+
 
 
 
@@ -23,7 +20,7 @@ from scipy.stats import pearsonr
 #     print s
 SIZE = 60
 FONT = ImageFont.truetype(
-    "D:/Development/Projects/Arabic Language/Arabic_Lang_Recogn_Branch/Arabic_Lang_Recognition/resources/fonts/trado.ttf",
+    "D:/Development/Projects/Arabic Language/Arabic_Lang_Recogn_Branch/Arabic_Lang_Recognition/resources/fonts/TRADO.ttf",
     SIZE)
 MAX_OVERLAP = 0.3
 MAX_SAME_OVERLAP = 0.2
@@ -31,7 +28,6 @@ THRESHOLD = 0.75
 
 
 def dependencies_for_myprogram():
-    from scipy.sparse.csgraph import _validation
 
 
 def unicode_to_image(uni):
