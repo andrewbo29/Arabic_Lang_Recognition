@@ -16,6 +16,7 @@ import decompose.space as space
 from scipy.stats import pearsonr
 
 
+
 # print len(arabic_reshaper.ARABIC_GLYPHS.items())
 # for k, v in arabic_reshaper.ARABIC_GLYPHS.items():
 #     s = u' '.join(v[0:(len(v) - 1)])

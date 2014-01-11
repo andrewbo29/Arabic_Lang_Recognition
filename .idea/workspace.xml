@@ -2,27 +2,276 @@
 <project version="4">
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/decompose/childgarden.py" description="# im = readGrayIm(&quot;../images/0.bmp&quot;)&#10;# pas = cl.sp..." line="41" />
-    <bookmark url="file://$PROJECT_DIR$/recogn/rec.py" line="273" />
+    <bookmark url="file://$PROJECT_DIR$/recogn/rec.py" line="271" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="97a9bb64-80ea-4241-a57d-75e5103586bc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recogn/rec.py" afterPath="$PROJECT_DIR$/recogn/rec.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/space.py" afterPath="$PROJECT_DIR$/decompose/space.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/decompose/splitter.py" afterPath="$PROJECT_DIR$/decompose/splitter.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_0.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_1.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_10.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_100.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_101.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_102.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_103.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_104.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_105.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_106.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_107.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_108.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_109.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_11.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_110.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_111.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_112.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_113.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_114.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_115.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_116.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_117.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_118.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_119.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_12.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_120.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_121.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_122.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_123.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_124.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_125.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_126.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_127.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_128.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_129.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_13.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_130.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_131.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_132.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_133.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_134.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_135.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_136.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_137.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_138.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_139.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_14.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_140.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_141.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_142.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_143.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_144.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_145.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_146.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_147.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_148.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_149.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_15.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_150.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_151.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_152.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_153.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_154.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_155.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_156.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_157.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_158.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_159.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_16.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_160.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_161.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_162.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_163.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_164.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_165.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_166.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_167.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_168.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_169.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_17.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_170.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_171.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_172.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_173.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_174.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_175.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_176.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_177.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_178.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_179.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_18.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_180.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_181.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_182.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_183.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_184.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_185.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_186.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_187.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_188.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_189.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_19.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_190.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_191.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_192.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_193.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_194.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_195.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_196.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_197.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_198.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_199.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_2.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_20.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_200.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_201.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_202.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_203.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_204.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_205.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_206.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_207.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_208.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_209.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_21.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_210.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_211.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_212.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_213.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_214.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_215.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_216.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_217.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_218.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_219.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_22.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_220.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_221.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_222.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_223.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_224.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_225.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_226.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_227.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_228.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_229.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_23.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_230.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_231.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_232.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_233.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_234.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_235.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_236.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_24.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_25.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_26.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_27.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_28.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_29.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_3.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_30.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_31.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_32.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_33.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_34.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_35.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_36.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_37.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_38.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_39.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_4.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_40.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_41.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_42.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_43.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_44.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_45.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_46.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_47.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_48.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_49.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_5.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_50.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_51.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_52.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_53.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_54.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_55.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_56.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_57.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_58.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_59.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_6.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_60.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_61.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_62.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_63.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_64.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_65.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_66.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_67.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_68.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_69.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_7.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_70.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_71.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_72.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_73.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_74.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_75.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_76.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_77.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_78.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_79.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_8.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_80.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_81.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_82.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_83.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_84.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_85.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_86.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_87.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_88.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_89.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_9.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_90.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_91.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_92.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_93.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_94.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_95.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_96.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_97.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_98.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/dict/glyph_99.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/0_word.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/0_word_rec.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/1_word.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/1_word_rec.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/2_word.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/2_word_rec.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/3_word.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/3_word_rec.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/4_word.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/4_word_rec.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/5_word.bmp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/recogn/workDir/results/5_word_rec.bmp" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recogn/file.txt" afterPath="$PROJECT_DIR$/recogn/file.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recogn/gui.py" afterPath="$PROJECT_DIR$/recogn/gui.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Arabic_Lang_Recognition.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389373242127" ignored="false" />
+    <file path="/Dummy.txt" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389466657686" ignored="false" />
     <file path="/split_to_strings.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1370284552391" ignored="false" />
     <file path="/iutil.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363712518906" ignored="false" />
     <file path="/util.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389396219061" ignored="false" />
-    <file path="/a.dummy" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1386194572394" ignored="false" />
+    <file path="/a.dummy" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389459718367" ignored="false" />
     <file path="/recognition.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363778990581" ignored="false" />
     <file path="/main.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1363781271321" ignored="false" />
     <file path="/space.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389397943876" ignored="false" />
     <file path="/a.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371060188423" ignored="false" />
     <file path="/childgarden.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1369482057755" ignored="false" />
-    <file path="/fragment.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389448407954" ignored="false" />
+    <file path="/fragment.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389461689883" ignored="false" />
     <file path="/centralline.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1371017755154" ignored="false" />
     <file path="/xycuts.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389191985366" ignored="false" />
     <file path="/space_test.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1379578630732" ignored="false" />
@@ -33,8 +282,9 @@
     <file path="/splitter.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389437208444" ignored="false" />
     <file path="/arab_words_writer.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389108685722" ignored="false" />
     <file path="/fontshit.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389193007413" ignored="false" />
-    <file path="/rec.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389448517417" ignored="false" />
+    <file path="/rec.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389460193630" ignored="false" />
     <file path="/rec1.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389445500257" ignored="false" />
+    <file path="/gui.py" changelist="97a9bb64-80ea-4241-a57d-75e5103586bc" time="1389466469934" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +307,16 @@
       <file leaf-file-name="rec1.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recogn/rec1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="0" selection-start="2365" selection-end="2657" vertical-scroll-proportion="-1.04">
+            <state line="161" column="0" selection-start="4891" selection-end="4891" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rec.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/recogn/rec.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="63" selection-start="514" selection-end="573" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#24#67#0" expanded="true" />
               </folding>
@@ -65,46 +324,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Image.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/share/pyshared/PIL/Image.py">
+      <file leaf-file-name="gui.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/recogn/gui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1442" column="0" selection-start="45148" selection-end="45148" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="44" column="48" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.04360465">
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rec.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/recogn/rec.py">
+      <file leaf-file-name="Tkinter.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="258" column="29" selection-start="8231" selection-end="8231" vertical-scroll-proportion="0.2982456">
+            <state line="1889" column="18" selection-start="77811" selection-end="77821" vertical-scroll-proportion="-4.24">
               <folding />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ImageFile.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file:///usr/share/pyshared/PIL/ImageFile.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="497" column="0" selection-start="14379" selection-end="14379" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="splitter.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/decompose/splitter.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="32" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="word_rec_0.bmp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/recogn/word_rec_0.bmp">
-          <provider selected="true" editor-type-id="images">
-            <state />
           </provider>
         </entry>
       </file>
@@ -127,7 +363,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/main/__init__.py" />
         <option value="$PROJECT_DIR$/main/split_to_strings.py" />
         <option value="$PROJECT_DIR$/decompose/centralline.py" />
         <option value="$PROJECT_DIR$/recogn/true_junk.py" />
@@ -143,6 +378,7 @@
         <option value="$PROJECT_DIR$/decompose/splitter.py" />
         <option value="$PROJECT_DIR$/recogn/rec1.py" />
         <option value="$PROJECT_DIR$/recogn/rec.py" />
+        <option value="$PROJECT_DIR$/recogn/gui.py" />
       </list>
     </option>
   </component>
@@ -237,6 +473,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fonts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Arabic_Lang_Recognition" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="code" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="recogn" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -269,21 +523,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Arabic_Lang_Recognition" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="code" />
+              <option name="myItemId" value="recogn" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="decompose" />
+              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -295,12 +539,12 @@
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="recentsLimit" value="5" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../csc/stat" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="restartRequiresConfirmation" value="true" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -314,29 +558,11 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/simple_words_in_string_detection" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/fonts" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.rec">
-    <configuration default="false" name="features" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:/Python27/python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/recogn" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Arabic_Lang_Recognition" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recogn/features.py" />
-      <option name="PARAMETERS" value="" />
-      <RunnerSettings RunnerId="PyDebugRunner" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PyDebugRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.gui">
     <configuration default="false" name="arab_words_writer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -421,6 +647,27 @@
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
+    <configuration default="false" name="gui" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:/Python27/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/recogn" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Arabic_Lang_Recognition" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recogn/gui.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -481,19 +728,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.features" />
-      <item index="1" class="java.lang.String" itemvalue="Python.arab_words_writer" />
-      <item index="2" class="java.lang.String" itemvalue="Python.recArabicWord" />
-      <item index="3" class="java.lang.String" itemvalue="Python.rec" />
-      <item index="4" class="java.lang.String" itemvalue="Python.rec1" />
+      <item index="0" class="java.lang.String" itemvalue="Python.arab_words_writer" />
+      <item index="1" class="java.lang.String" itemvalue="Python.recArabicWord" />
+      <item index="2" class="java.lang.String" itemvalue="Python.rec" />
+      <item index="3" class="java.lang.String" itemvalue="Python.rec1" />
+      <item index="4" class="java.lang.String" itemvalue="Python.gui" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.rec" />
-        <item index="1" class="java.lang.String" itemvalue="Python.rec1" />
-        <item index="2" class="java.lang.String" itemvalue="Python.arab_words_writer" />
-        <item index="3" class="java.lang.String" itemvalue="Python.recArabicWord" />
-        <item index="4" class="java.lang.String" itemvalue="Python.features" />
+        <item index="0" class="java.lang.String" itemvalue="Python.gui" />
+        <item index="1" class="java.lang.String" itemvalue="Python.rec" />
+        <item index="2" class="java.lang.String" itemvalue="Python.rec1" />
+        <item index="3" class="java.lang.String" itemvalue="Python.arab_words_writer" />
+        <item index="4" class="java.lang.String" itemvalue="Python.recArabicWord" />
       </list>
     </recent_temporary>
   </component>
@@ -533,29 +780,33 @@
       <created>1389193121351</created>
       <updated>1389193121351</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add fonts combobox to gui.&#10;Add threshold setter to gui">
+      <created>1389462880543</created>
+      <updated>1389462880543</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32057416" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24944155" sideWeight="0.6283892" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24318182" sideWeight="0.5869219" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2469697" sideWeight="0.67145133" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4338118" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41307816" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41148326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="92" y="92" width="1416" height="676" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -603,7 +854,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add rec" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'obusExp' of https://github.com/AndrewBo29/Arabic_Lang_Recognition into obusExp&#10;&#10;Conflicts:&#10;&#9;recogn/gui.py&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -620,6 +871,8 @@
     <MESSAGE value="improve decomposition (algorithm reimplemented, tests added)&#10;__init__ files added to all modules&#10;recogn module added with alpha-version of feature learning&#10;" />
     <MESSAGE value="add gitignore&#10;create junk.py - experiments with training set formation from text document&#10;create splitter.py - friendly interface for line/word decomposition&#10;add .gitignore" />
     <MESSAGE value="add rec" />
+    <MESSAGE value="Add fonts combobox to gui.&#10;Add threshold setter to gui" />
+    <MESSAGE value="Merge branch 'obusExp' of https://github.com/AndrewBo29/Arabic_Lang_Recognition into obusExp&#10;&#10;Conflicts:&#10;&#9;recogn/gui.py&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -711,68 +964,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/recogn/rec.py</url>
-          <line>115</line>
-          <option name="timeStamp" value="391" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/recogn/rec.py</url>
-          <line>153</line>
+          <line>151</line>
           <option name="timeStamp" value="392" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/recogn/rec.py</url>
-          <line>113</line>
-          <option name="timeStamp" value="398" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/recogn/rec.py</url>
-          <line>175</line>
-          <option name="timeStamp" value="400" />
+          <line>179</line>
+          <option name="timeStamp" value="405" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="401" />
+      <option name="time" value="407" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/decompose/xycuts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/word_1.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/word_rec_1.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/word_3.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/word_rec_3.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/true_junk.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/word_0.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm20/system/python_stubs/348993582/_tkinter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -780,34 +984,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/word_2.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/word_rec_2.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/word_rec_0.bmp">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/decompose/splitter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="32" selection-start="729" selection-end="729" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recogn/rec1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="0" selection-start="2365" selection-end="2657" vertical-scroll-proportion="-1.04">
-          <folding>
-            <element signature="e#24#67#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -818,17 +998,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/recogn/file.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file:///usr/share/pyshared/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1442" column="0" selection-start="45148" selection-end="45148" vertical-scroll-proportion="0.0">
+        <state line="46" column="8" selection-start="1305" selection-end="1305" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recogn/input.bmp">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/PIL/ImageFile.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="497" column="0" selection-start="14379" selection-end="14379" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/PIL/Image.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1438" column="0" selection-start="45023" selection-end="45023" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/PIL/ImageFont.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="0" selection-start="6902" selection-end="6902" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/dist-packages/PIL/ImageDraw.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="266" column="0" selection-start="8105" selection-end="8105" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recogn/rec1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="0" selection-start="4891" selection-end="4891" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/subprocess.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="510" column="0" selection-start="16334" selection-end="16334" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recogn/rec.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="258" column="29" selection-start="8231" selection-end="8231" vertical-scroll-proportion="0.2982456">
+        <state line="20" column="63" selection-start="514" selection-end="573" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#24#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/lib/python2.7/lib-tk/Tkinter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1889" column="18" selection-start="77811" selection-end="77821" vertical-scroll-proportion="-4.24">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recogn/gui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="48" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.04360465">
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
