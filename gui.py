@@ -104,10 +104,10 @@ class MyFrame(Frame):
         self.text_filename = ''
 
         self.label_progress = Label(self, text="Progress: ")
-        self.label_progress.grid(row=9, column=1, sticky=E)
+        self.label_progress.grid(row=9, column=1, sticky=E, pady=20)
 
-        self.progressbar = Progressbar(self, orient="horizontal", length=214, mode="determinate")
-        self.progressbar.grid(row=9, column=2)
+        self.progressbar = Progressbar(self, orient="horizontal", length=245, mode="determinate")
+        self.progressbar.grid(row=9, column=2, sticky=E, pady=20)
 
     def load_file(self):
         fname = askopenfilename(filetypes=(("Text", "*.bmp"), ("All files", "*.*")))
