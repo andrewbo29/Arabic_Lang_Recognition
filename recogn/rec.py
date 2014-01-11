@@ -7,7 +7,6 @@ from bidi.algorithm import get_display
 
 import simple_words_in_string_detection.arabic_reshaper as arabic_reshaper
 import decompose.xycuts as xycuts
-import decompose.util as util
 from decompose.util import writeGrayIm
 from decompose.util import readGrayIm
 from decompose.util import remakeDir
@@ -15,8 +14,6 @@ from decompose.util import makeDir
 from decompose.space import Zone
 import decompose.space as space
 from scipy.stats import pearsonr
-from decompose.splitter import intersects
-from decompose.splitter import intersection
 
 
 # print len(arabic_reshaper.ARABIC_GLYPHS.items())
@@ -24,9 +21,10 @@ from decompose.splitter import intersection
 #     s = u' '.join(v[0:(len(v) - 1)])
 #     print s
 SIZE = 60
-FONT = ImageFont.truetype("/home/obus/Downloads/trado.ttf", SIZE)
+FONT = ImageFont.truetype("../resources/fonts/trado.ttf", SIZE)
 MAX_OVERLAP = 0.3
 MAX_SAME_OVERLAP = 0.2
+THRESHOLD = 0.75
 
 
 def unicode_to_image(uni):
@@ -103,6 +101,14 @@ class Hit(object):
         return "%s : %s" % (self.place, self.score)
 
 
+def intersection(space1, space2):
+    if space1[0] <= space2[0] <= space1[1]:
+        return min(space1[1], space2[1]) - space2[0]
+    if space2[0] <= space1[0] <= space2[1]:
+        return min(space1[1], space2[1]) - space1[0]
+    return 0
+
+
 def recognize_word_brute(glyph_dict, word):
     """
     распознает слово, возвращает юникод
@@ -169,11 +175,11 @@ def find_glyph_hits_in_word_brute(glyph, word):
         place = (left, right)
         im_zone = xycuts.cut_edges(word.relativeZone(horizontal=place))
         if im_zone.width() < 3 or im_zone.height() < 5:
-            print "WARN: too small image"
+            # print "WARN: too small image"
             continue
         dist = im_dist3(im_zone.extract(), glyph.im)
-        if dist > 0.75:
-            print dist
+        if dist > THRESHOLD:
+            # print dist
             hits.append(Hit(glyph, place, dist))
     return sorted(hits, reverse=True)
 
@@ -197,8 +203,8 @@ def recognize_glyph(glyph_dict, word, glyph_offset):
     if best_score == -1:
         print "Failed to recognize first glyph of word"
         best_match_glyph_uni_width = (u'-', 20)
-    else:
-        print best_score
+    # else:
+    #     print best_score
     return best_match_glyph_uni_width
 
 
@@ -239,38 +245,37 @@ def im_dist3(im1, im2):
     min_height = min(im1.shape[0], im2.shape[0])
     sub_im_array1 = im1[0:min_height, 0:min_width].flatten()
     sub_im_array2 = im2[0:min_height, 0:min_width].flatten()
-    (cor, p_value) = pearsonr(sub_im_array1, sub_im_array2)
-    return cor
+    return pearsonr(sub_im_array1, sub_im_array2)[0]
 
 
 #создаем строку
 
-DIR = remakeDir("workDir/")
-DICTIONARY = makeDir(DIR + "dict/")
-RESULTS = makeDir(DIR + "results/")
-
-image = Image.new("L", (500, 100), 255)
-d_usr = ImageDraw.Draw(image)
-# reshaped_text = arabic_reshaper.reshape(u'لا إله إلا الله')
-# reshaped_text = arabic_reshaper.reshape(u'الله يكون معك')
-reshaped_text = arabic_reshaper.reshape(u'لا إله إلا الله وأن محمدا رسول الله')
-bidi_text = get_display(reshaped_text)
-d_usr = d_usr.text((20, 20), bidi_text, fill=0, font=FONT)
-image.save(DIR + "input.bmp")
-input_image = Zone(readGrayIm(DIR + "input.bmp"))
-
-
-glyph_dict = makeDictionary()
-for i, glyph in enumerate(glyph_dict):
-    writeGrayIm(DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
-
-words = words_from_line(input_image)
-
-for index, w in enumerate(words):
-    # печатаем распознанное
-    writeGrayIm(RESULTS + "word_%s.bmp" % index, w.extract())
-    writeGrayIm(RESULTS + "word_rec_%s.bmp" % index,
-                     unicode_to_image(get_display(arabic_reshaper.reshape(recognize_word_brute(glyph_dict, w)))))
+# DIR = remakeDir("workDir/")
+# DICTIONARY = makeDir(DIR + "dict/")
+# RESULTS = makeDir(DIR + "results/")
+#
+# image = Image.new("L", (500, 100), 255)
+# d_usr = ImageDraw.Draw(image)
+# # reshaped_text = arabic_reshaper.reshape(u'لا إله إلا الله')
+# # reshaped_text = arabic_reshaper.reshape(u'الله يكون معك')
+# reshaped_text = arabic_reshaper.reshape(u'لا إله إلا الله وأن محمدا رسول الله')
+# bidi_text = get_display(reshaped_text)
+# d_usr = d_usr.text((20, 20), bidi_text, fill=0, font=FONT)
+# image.save(DIR + "input.bmp")
+# input_image = Zone(readGrayIm(DIR + "input.bmp"))
+#
+#
+# glyph_dict = makeDictionary()
+# for i, glyph in enumerate(glyph_dict):
+#     writeGrayIm(DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
+#
+# words = words_from_line(input_image)
+#
+# for index, w in enumerate(words):
+#     # печатаем распознанное
+#     writeGrayIm(RESULTS + "%s_word.bmp" % index, w.extract())
+#     writeGrayIm(RESULTS + "%s_word_rec.bmp" % index,
+#                      unicode_to_image(get_display(arabic_reshaper.reshape(recognize_word_brute(glyph_dict, w)))))
 
 
 
