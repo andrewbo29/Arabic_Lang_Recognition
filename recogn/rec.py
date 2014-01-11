@@ -3,17 +3,14 @@ from PIL import Image, ImageFont, ImageDraw
 import numpy
 import math
 
-from bidi.algorithm import get_display
+from scipy.stats import pearsonr
 
 import simple_words_in_string_detection.arabic_reshaper as arabic_reshaper
 import decompose.xycuts as xycuts
-from decompose.util import writeGrayIm
 from decompose.util import readGrayIm
-from decompose.util import remakeDir
-from decompose.util import makeDir
 from decompose.space import Zone
 import decompose.space as space
-from scipy.stats import pearsonr
+
 
 
 # print len(arabic_reshaper.ARABIC_GLYPHS.items())
@@ -21,7 +18,7 @@ from scipy.stats import pearsonr
 #     s = u' '.join(v[0:(len(v) - 1)])
 #     print s
 SIZE = 60
-FONT = ImageFont.truetype("../resources/fonts/trado.ttf", SIZE)
+FONT = ImageFont.truetype("../resources/fonts/TRADO.TTF", SIZE)
 MAX_OVERLAP = 0.3
 MAX_SAME_OVERLAP = 0.2
 THRESHOLD = 0.75
@@ -69,6 +66,7 @@ class Glyph:
     """
     глиф - юникодный символ и варианты картинок
     """
+
     def __init__(self, uni, im):
         self.uni = uni
         self.im = im
@@ -137,9 +135,9 @@ def filter_overlapped_hits_for_same_glyph(hits):
 
 
 def is_overlapped(place_a, place_b, max_overlap):
-        overlap = float(intersection(place_a, place_b))
-        overlap_rate = overlap / min(place_a[1] - place_a[0], place_b[1] - place_b[0])
-        return overlap_rate > max_overlap
+    overlap = float(intersection(place_a, place_b))
+    overlap_rate = overlap / min(place_a[1] - place_a[0], place_b[1] - place_b[0])
+    return overlap_rate > max_overlap
 
 
 def filter_overlapped_hits(hits):
@@ -164,7 +162,7 @@ def find_glyph_hits_in_word_brute(glyph, word):
             glyph = Glyph(glyph.uni, glyph.im[:, 1:glyph_width])
             glyph_width -= 1
         elif glyph_width - word.width() == 2:
-            glyph = Glyph(glyph.uni, glyph.im[:, 1:(glyph_width-1)])
+            glyph = Glyph(glyph.uni, glyph.im[:, 1:(glyph_width - 1)])
             glyph_width -= 2
         else:
             return []
@@ -203,7 +201,7 @@ def recognize_glyph(glyph_dict, word, glyph_offset):
     if best_score == -1:
         print "Failed to recognize first glyph of word"
         best_match_glyph_uni_width = (u'-', 20)
-    # else:
+        # else:
     #     print best_score
     return best_match_glyph_uni_width
 

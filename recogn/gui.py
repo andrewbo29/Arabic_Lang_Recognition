@@ -1,10 +1,32 @@
 from Tkinter import *
 from tkFileDialog import askopenfilename
 from tkMessageBox import showerror
-
-from rec import *
+from ttk import Combobox
 import os
+from os import listdir
+from os.path import isfile, join
 import tkFont
+
+import rec
+from rec import *
+
+
+_RESOURCES_DIR = "../resources/"
+_FONTS_DIR = _RESOURCES_DIR + "fonts/"
+
+
+class Fontier(object):
+    def __init__(self, path):
+        self.path = path
+
+    def _file_names_in_dir(self):
+        return [f for f in listdir(self.path) if isfile(join(self.path, f))]
+
+    def fonts_names(self):
+        return [fn[:-4] for fn in self._file_names_in_dir()]
+
+    def font_files(self):
+        return [join(self.path, f) for f in self._file_names_in_dir()]
 
 
 class MyFrame(Frame):
@@ -36,13 +58,31 @@ class MyFrame(Frame):
         self.text_output.grid(row=2, column=2)
 
         self.button_start = Button(self, text="Start", command=self.process, width=10)
-        self.button_start.grid(row=3, column=0, sticky=W)
+        self.button_start.grid(row=4, column=0, sticky=W)
 
         self.label_done = Label(self)
-        self.label_done.grid(row=3, column=1)
+        self.label_done.grid(row=4, column=1)
 
         self.button_close = Button(self, text="Close", command=sys.exit, width=10)
-        self.button_close.grid(row=3, column=2, sticky=W)
+        self.button_close.grid(row=4, column=2, sticky=W)
+
+        self.label_threshold = Label(self, text="Threshold: ")
+        self.label_threshold.grid(row=3, column=0, sticky=W)
+
+        self.input_threshold = Entry(self)
+        self.input_threshold.delete(0, END)
+        self.input_threshold.insert(0, "0.75")
+        self.input_threshold.grid(row=3, column=1, sticky=W)
+
+        self.label_threshold = Label(self, text="Font: ")
+        self.label_threshold.grid(row=3, column=2, sticky=W)
+
+        self.fontier = Fontier(_FONTS_DIR)
+        self.font_combobox = Combobox(self,
+                                      height=min(5, len(self.fontier.fonts_names())),
+                                      values=self.fontier.fonts_names())
+        self.font_combobox.set(self.fontier.fonts_names()[0])
+        self.font_combobox.grid(row=3, column=3, sticky=W)
 
         self.im_filename = ''
         self.text_filename = ''
@@ -64,9 +104,14 @@ class MyFrame(Frame):
     def process(self):
         if self.im_filename:
             try:
+                self.label_done.config(text='In progress...')
                 DIR = remakeDir("workDir/")
                 DICTIONARY = makeDir(DIR + "dict/")
                 RESULTS = makeDir(DIR + "results/")
+
+                font_file = self.fontier.font_files()[self.fontier.fonts_names().index(self.font_combobox.get())]
+                rec.FONT = ImageFont.truetype(font_file, SIZE)
+                rec.THRESHOLD = float(self.input_threshold.get())
 
                 input_image = Zone(readGrayIm(self.im_filename))
                 glyph_dict = makeDictionary()
@@ -87,8 +132,9 @@ class MyFrame(Frame):
                 osCommandString = ' '.join([progr_name, self.text_filename])
                 os.system(osCommandString)
 
-            except:
-                showerror("Open Source File", "Failed to read file\n'%s'" % self.im_filename)
+            except ArithmeticError as e:
+                print e
+                showerror("Open Source File", "Failed to read file\n'%s'.\n Exception: %s" % (self.im_filename, e))
             return
 
 
