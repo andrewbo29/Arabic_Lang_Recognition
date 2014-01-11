@@ -1,11 +1,11 @@
 from Tkinter import *
 from ttk import *
 from tkFileDialog import askopenfilename
-import os
-import tkFont
+from tkMessageBox import showerror
 
 from recogn.rec import *
-
+import os
+import tkFont
 
 DIR = remakeDir("workDir/")
 DICTIONARY = makeDir(DIR + "dict/")
@@ -74,40 +74,40 @@ class MyFrame(Frame):
 
     def process(self):
         if self.im_filename:
-            # try:
-            input_image = Zone(readGrayIm(self.im_filename))
-            glyph_dict = makeDictionary()
-            for i, glyph in enumerate(glyph_dict):
-                writeGrayIm(DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
+            try:
+                input_image = Zone(readGrayIm(self.im_filename))
+                glyph_dict = makeDictionary()
+                for i, glyph in enumerate(glyph_dict):
+                    writeGrayIm(DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
 
-            words = words_from_line(input_image)
+                words = words_from_line(input_image)
 
-            self.progressbar["value"] = 0
-            self.progressbar["maximum"] = len(words)
-            text_file = open(self.text_filename, 'w')
-            val = 0
-            for index, w in enumerate(words):
-                rec_word = recognize_word_brute(glyph_dict, w)
-                # writeGrayIm(RESULTS + "%s_word.bmp" % index, w.extract())
-                writeGrayIm(RESULTS + "%s_word_rec.bmp" % index,
-                            unicode_to_image(
-                                get_display(arabic_reshaper.reshape(rec_word))))
-                text_file.write(rec_word.encode('utf-8') + ' ')
-                val += 1
-                self.progressbar["value"] = val
-                self.update_idletasks()
-            self.progressbar.stop()
+                self.progressbar["value"] = 0
+                self.progressbar["maximum"] = len(words)
+                text_file = open(self.text_filename, 'w')
+                val = 0
+                for index, w in enumerate(words):
+                    rec_word = recognize_word_brute(glyph_dict, w)
+                    # writeGrayIm(RESULTS + "%s_word.bmp" % index, w.extract())
+                    writeGrayIm(RESULTS + "%s_word_rec.bmp" % index,
+                                unicode_to_image(
+                                    get_display(arabic_reshaper.reshape(rec_word))))
+                    text_file.write(rec_word.encode('utf-8') + ' ')
+                    val += 1
+                    self.progressbar["value"] = val
+                    self.update_idletasks()
+                self.progressbar.stop()
 
-            text_file.close()
+                text_file.close()
 
-            self.button_show.config(state=ACTIVE)
+                self.button_show.config(state=ACTIVE)
 
-            progr_name = 'notepad.exe'
-            osCommandString = ' '.join([progr_name, self.text_filename])
-            os.system(osCommandString)
+                progr_name = 'notepad.exe'
+                osCommandString = ' '.join([progr_name, self.text_filename])
+                os.system(osCommandString)
 
-            # except:
-            #     showerror("Open Source File", "Failed to read file\n'%s'" % self.im_filename)
+            except:
+                showerror("Open Source File", "Failed to read file\n'%s'" % self.im_filename)
             return
 
     def show_rec(self):

@@ -1,16 +1,19 @@
 # -*- coding: UTF-8 -*-
-import math
-
 from PIL import Image, ImageFont, ImageDraw
 import numpy
-from scipy.stats import pearsonr
+import math
+
+from bidi.algorithm import get_display
 
 import simple_words_in_string_detection.arabic_reshaper as arabic_reshaper
 import decompose.xycuts as xycuts
+from decompose.util import writeGrayIm
 from decompose.util import readGrayIm
+from decompose.util import remakeDir
+from decompose.util import makeDir
 from decompose.space import Zone
 import decompose.space as space
-
+from scipy.stats import pearsonr
 
 
 # print len(arabic_reshaper.ARABIC_GLYPHS.items())
@@ -27,6 +30,7 @@ THRESHOLD = 0.75
 
 
 def dependencies_for_myprogram():
+    from scipy.sparse.csgraph import _validation
 
 
 def unicode_to_image(uni):
