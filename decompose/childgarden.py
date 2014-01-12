@@ -33,10 +33,10 @@ for w_ind in range(len(words)):
 
 
 #--------------- splitToPseudoAtoms & insureWhySpace in battle -------------------
-def mark(m, cInd, pa):
-    for z in pa.zeros:
-        drawLine(m, (z[0], cInd), (z[1], cInd))
-    return m
+# def mark(m, cInd, pa):
+#     for z in pa.zeros:
+#         drawLine(m, (z[0], cInd), (z[1], cInd))
+#     return m
 
 
 # im = readGrayIm("../images/0.bmp")

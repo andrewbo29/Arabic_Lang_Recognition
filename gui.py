@@ -127,7 +127,6 @@ class MyFrame(Frame):
     def process(self):
         if self.im_filename:
             try:
-
                 font_file = self.fontier.font_files()[self.fontier.fonts_names().index(self.font_combobox.get())]
                 rec.FONT = ImageFont.truetype(font_file, SIZE)
                 rec.THRESHOLD = float(self.input_threshold.get())
@@ -141,16 +140,20 @@ class MyFrame(Frame):
 
                 self.progressbar["value"] = 0
                 self.progressbar["maximum"] = len(words)
-                text_file = open(self.text_filename, 'w')
+                rec_words = []
                 for index, w in enumerate(words):
                     rec_word = recognize_word_brute(glyph_dict, w)
                     writeGrayIm(_RESULTS + "%s_word_rec.bmp" % index,
                                 unicode_to_image(
                                     get_display(arabic_reshaper.reshape(rec_word))))
 
-                    text_file.write(rec_word.encode('utf-8') + ' ')
+                    rec_words.append(rec_word)
                     self.progressbar["value"] = index + 1
                     self.update_idletasks()
+
+                text_file = open(self.text_filename, 'w')
+                for i in range(len(rec_words)-1, -1, -1):
+                    text_file.write(rec_words[i].encode('utf-8') + ' ')
 
                 text_file.close()
                 self.button_show.config(state=ACTIVE)

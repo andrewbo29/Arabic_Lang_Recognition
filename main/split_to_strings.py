@@ -1,4 +1,4 @@
-import cv2
+# import cv2
 import util
 import numpy
 
@@ -14,19 +14,19 @@ STRUCT_SHAPE_SPLITDOC = (4, 1)
 STRUCT_SHAPE_CENTRAL_LNE = (7, 1)
 
 
-def rotateImage(image, angle):
-    image_center = tuple(numpy.array(image.shape) / 2)
-    rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
-    shape = (image.shape[1], image.shape[0])
-    result = cv2.warpAffine(image, rot_mat, shape, flags=cv2.INTER_LINEAR)
-    return result
+# def rotateImage(image, angle):
+#     image_center = tuple(numpy.array(image.shape) / 2)
+#     rot_mat = cv2.getRotationMatrix2D(image_center, angle, 1.0)
+#     shape = (image.shape[1], image.shape[0])
+#     result = cv2.warpAffine(image, rot_mat, shape, flags=cv2.INTER_LINEAR)
+#     return result
 
 
-def erodeImage(image, structElemShape):
-    kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, structElemShape)
-    result = cv2.erode(image, kernel)
-    # util.writeGrayIm("smoothNoise.bmp", result)
-    return result
+# def erodeImage(image, structElemShape):
+#     kernel = cv2.getStructuringElement(cv2.MORPH_CROSS, structElemShape)
+#     result = cv2.erode(image, kernel)
+#     util.writeGrayIm("smoothNoise.bmp", result)
+    # return result
 
 
 def isVerticalRightLine(image):
@@ -55,24 +55,24 @@ def getRightPixel(image):
     return -1, -1
 
 
-def getRotateAngle(image):
-    angle = 0
-    newImage = image
-    while not isVerticalRightLine(newImage):
-        angle += ANGLE_STEP
-        if angle >= 180:
-            return 180
-        newImage = rotateImage(image, angle)
-        util.writeGrayIm("test_test.bmp", newImage)
+# def getRotateAngle(image):
+#     angle = 0
+#     newImage = image
+#     while not isVerticalRightLine(newImage):
+#         angle += ANGLE_STEP
+#         if angle >= 180:
+#             return 180
+#         newImage = rotateImage(image, angle)
+#         util.writeGrayIm("test_test.bmp", newImage)
+#
+#     return angle
 
-    return angle
 
-
-def normalizeImage(image):
-    eroded = erodeImage(image, STRUCT_SHAPE_SPLITDOC)
-    angle = getRotateAngle(eroded)
-    result = rotateImage(image, angle)
-    return result
+# def normalizeImage(image):
+#     eroded = erodeImage(image, STRUCT_SHAPE_SPLITDOC)
+#     angle = getRotateAngle(eroded)
+#     result = rotateImage(image, angle)
+#     return result
 
 
 def xy_cuts(m):
