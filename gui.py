@@ -130,6 +130,7 @@ class MyFrame(Frame):
                 font_file = self.fontier.font_files()[self.fontier.fonts_names().index(self.font_combobox.get())]
                 rec.FONT = ImageFont.truetype(font_file, SIZE)
                 rec.THRESHOLD = float(self.input_threshold.get())
+                rec.TEMP_IMAGE = join(_CURRENT_DIR, "temp.bmp").encode('utf-8')
 
                 input_image = Zone(readGrayIm(self.im_filename))
                 glyph_dict = makeDictionary()
