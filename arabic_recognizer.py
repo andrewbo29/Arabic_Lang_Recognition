@@ -27,7 +27,6 @@ _FONTS_DIR = join(_RESOURCES_DIR, "fonts")
 class Fontier(object):
     def __init__(self, path):
         self.path = path
-        print(path)
 
     def _file_names_in_dir(self):
         return [f for f in listdir(self.path) if isfile(join(self.path, f))]
@@ -111,7 +110,7 @@ class MyFrame(Frame):
         self.progressbar.grid(row=9, column=2, sticky=E, pady=20)
 
     def load_file(self):
-        fname = askopenfilename(filetypes=(("Text", "*.bmp"), ("All files", "*.*")))
+        fname = askopenfilename(filetypes=(("Picture", "*.bmp"), ("All files", "*.*")))
         if fname:
             self.im_filename = fname
             self.text_input.insert(END, fname)
@@ -126,45 +125,45 @@ class MyFrame(Frame):
 
     def process(self):
         if self.im_filename:
-            try:
-                font_file = self.fontier.font_files()[self.fontier.fonts_names().index(self.font_combobox.get())]
-                rec.FONT = ImageFont.truetype(font_file, SIZE)
-                rec.THRESHOLD = float(self.input_threshold.get())
+            # try:
+            font_file = self.fontier.font_files()[self.fontier.fonts_names().index(self.font_combobox.get())]
+            rec.FONT = ImageFont.truetype(font_file, SIZE)
+            rec.THRESHOLD = float(self.input_threshold.get())
+            rec.TEMP_IMAGE = join(_CURRENT_DIR, "temp.bmp").decode('cp1251')
 
-                input_image = Zone(readGrayIm(self.im_filename))
-                glyph_dict = makeDictionary()
-                for i, glyph in enumerate(glyph_dict):
-                    writeGrayIm(_DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
+            input_image = Zone(readGrayIm(self.im_filename))
+            glyph_dict = makeDictionary()
+            # for i, glyph in enumerate(glyph_dict):
+            #     writeGrayIm(_DICTIONARY + "glyph_%s.bmp" % i, glyph.im)
 
-                words = words_from_line(input_image)
+            words = words_from_line(input_image)
 
-                self.progressbar["value"] = 0
-                self.progressbar["maximum"] = len(words)
-                rec_words = []
-                for index, w in enumerate(words):
-                    rec_word = recognize_word_brute(glyph_dict, w)
-                    writeGrayIm(_RESULTS + "%s_word_rec.bmp" % index,
-                                unicode_to_image(
-                                    get_display(arabic_reshaper.reshape(rec_word))))
+            self.progressbar["value"] = 0
+            self.progressbar["maximum"] = len(words)
+            rec_words = []
+            for index, w in enumerate(words):
+                rec_word = recognize_word_brute(glyph_dict, w)
+                writeGrayIm(_RESULTS + "%s_word_rec.bmp" % index,
+                            unicode_to_image(get_display(arabic_reshaper.reshape(rec_word))))
 
-                    rec_words.append(rec_word)
-                    self.progressbar["value"] = index + 1
-                    self.update_idletasks()
+                rec_words.append(rec_word)
+                self.progressbar["value"] = index + 1
+                self.update_idletasks()
 
-                text_file = open(self.text_filename, 'w')
-                for i in range(len(rec_words)-1, -1, -1):
-                    text_file.write(rec_words[i].encode('utf-8') + ' ')
+            text_file = open(self.text_filename, 'w')
+            for i in range(len(rec_words)-1, -1, -1):
+                text_file.write(rec_words[i].encode('utf-8') + ' ')
 
-                text_file.close()
-                self.button_show.config(state=ACTIVE)
+            text_file.close()
+            self.button_show.config(state=ACTIVE)
 
-                progr_name = 'notepad.exe'
-                osCommandString = ' '.join([progr_name, self.text_filename])
-                os.system(osCommandString)
+            progr_name = 'notepad.exe'
+            osCommandString = ' '.join([progr_name, self.text_filename.encode('cp1251')])
+            os.system(osCommandString)
 
-            except:
-                showerror("Open Source File", "Failed to read file\n'%s'" % self.im_filename)
-            return
+            # except:
+            #     showerror("Open Source File", "Failed to read file\n'%s'" % self.im_filename)
+        return
 
     def show_rec(self):
         webbrowser.open(_RESULTS)

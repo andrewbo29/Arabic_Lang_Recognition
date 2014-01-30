@@ -1,7 +1,8 @@
-# import cv2
+# import cv2.cv as cv
 from shutil import rmtree
 from os import mkdir
 import scipy.misc
+import numpy
 
 # ------ create - delete folders routine -------
 
@@ -9,6 +10,7 @@ import scipy.misc
 def deleteDir(path):
     rmtree(path)
     return path
+
 
 def makeDir(path):
     mkdir(path)
@@ -24,8 +26,10 @@ def remakeDir(path):
 
 
 def readGrayIm(path):
-    # im = cv2.imread(path, cv2.CV_LOAD_IMAGE_GRAYSCALE)
-    im = scipy.misc.imread(path)
+    path_str = path.encode('cp1251')
+    # read_im = cv.LoadImage(path_str, cv.CV_LOAD_IMAGE_GRAYSCALE)
+    read_im = scipy.misc.imread(path_str)
+    im = numpy.asarray(read_im[:, :])
     return (255 - im).astype(float) / 255
 
 

@@ -18,6 +18,7 @@ FONT = None
 MAX_OVERLAP = 0.3
 MAX_SAME_OVERLAP = 0.2
 THRESHOLD = 0.75
+TEMP_IMAGE = "temp.bmp"
 
 
 def dependencies_for_myprogram():
@@ -31,8 +32,8 @@ def unicode_to_image(uni):
     image = Image.new("L", (int(SIZE * len(uni) * 2), SIZE * 3), 255)
     d_usr = ImageDraw.Draw(image)
     d_usr.text((20, 20), uni, fill=0, font=FONT)
-    image.save("test.bmp")
-    zone = Zone(readGrayIm("test.bmp"))
+    image.save(TEMP_IMAGE)
+    zone = Zone(readGrayIm(TEMP_IMAGE))
     zone = xycuts.cut_edges(zone)
     return zone.extract()
 
